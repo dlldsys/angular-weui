@@ -1,19 +1,47 @@
 {
   "name": "angular-weui",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.1",
+  "description": "Angular WeUI component library - WeChat UI components for Angular applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build angular-weui --configuration production && npm run build:package",
+    "build:package": "cp public_api.ts dist/angular-weui/index.ts && cp README.md dist/angular-weui/ && cp LICENSE dist/angular-weui/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:performance": "ng build && echo 'Performance testing guide created. Open performance-test.ts in browser console.'",
     "test:memory": "echo 'Run performanceTests.memory() in browser console'",
     "test:components": "echo 'Run performanceTests.runAll() in browser console'",
     "storybook": "ng run angular-weui:storybook",
-    "build-storybook": "ng run angular-weui:build-storybook"
+    "build-storybook": "ng run angular-weui:build-storybook",
+    "publish:npm": "npm run build:lib && cd dist/angular-weui && npm publish"
   },
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "angular",
+    "weui",
+    "wechat",
+    "ui",
+    "components",
+    "mobile",
+    "typescript"
+  ],
+  "author": "dlldsys",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlldsys/angular-weui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlldsys/angular-weui/issues"
+  },
+  "homepage": "https://dlldsys.github.io/angular-weui/",
   "packageManager": "npm@11.9.0",
   "dependencies": {
     "@angular/animations": "^21.2.5",

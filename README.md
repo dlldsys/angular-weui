@@ -1,59 +1,104 @@
-# AngularWeui
+# Angular WeUI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Angular WeUI 是基于微信官方 WeUI 设计语言开发的 Angular 组件库，为移动端 Web 应用提供一致的微信风格用户体验。
 
-## Development server
+## ⚠️ 开发状态警告
 
-To start a local development server, run:
+**当前版本：0.1.0-alpha.1**
 
-```bash
-ng serve
-```
+> **重要提醒：此库仍在开发中，请谨慎使用！**
+> 
+> - API 可能会发生变化
+> - 部分功能可能不稳定
+> - 建议仅用于测试和评估
+> - 生产环境使用请等待正式版发布
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 特性
 
-## Code scaffolding
+- 基于 WeUI 设计规范
+- 移动端优化
+- Angular 21+ 支持
+- TypeScript 支持
+- 组件化开发
+- 完整的文档和示例
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 安装
 
 ```bash
-ng build
+npm install angular-weui
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 使用
 
-## Running unit tests
+```typescript
+import { ComponentModule } from 'angular-weui';
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+@NgModule({
+  imports: [
+    ComponentModule
+  ]
+})
+export class AppModule { }
+```
+
+## 组件
+
+- Button (按钮)
+- Cell (单元格)
+- Toast (提示)
+- Dialog (对话框)
+- Progress (进度条)
+- Actionsheet (操作列表)
+- Picker (选择器)
+- DatetimePicker (日期选择器)
+- Tabbar (标签栏)
+- Navbar (导航栏)
+- List (列表)
+- Card (卡片)
+- Form (表单)
+- SearchBar (搜索栏)
+- Slider (滑块)
+- Uploader (上传)
+
+## 开发
 
 ```bash
-ng test
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm start
+
+# 构建
+npm run build
+
+# 运行测试
+npm test
+
+# 启动 Storybook
+npm run storybook
 ```
 
-## Running end-to-end tests
+## 文档
 
-For end-to-end (e2e) testing, run:
+完整文档请访问：https://dlldsys.github.io/angular-weui/
 
-```bash
-ng e2e
-```
+## 贡献
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+欢迎提交 Issue 和 Pull Request！
 
-## Additional Resources
+## 许可证
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT License
+
+## 更新日志
+
+### v0.1.0-alpha.1
+- 初始版本发布
+- 基础组件实现
+- Storybook 文档
+- GitHub Pages 部署
+
+---
+
+**注意：** 这是一个预览版本，API 可能会发生变化。请关注更新日志获取最新信息.
