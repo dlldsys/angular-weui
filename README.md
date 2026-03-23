@@ -4,7 +4,7 @@ Angular WeUI Components 是基于微信官方 WeUI 设计语言开发的 Angular
 
 ## ⚠️ 开发状态警告
 
-**当前版本：0.1.0-alpha.1**
+**当前版本：0.1.0-alpha.2**
 
 > **重要提醒：此库仍在开发中，请谨慎使用！**
 > 
@@ -158,7 +158,7 @@ npm run storybook
 ## 📦 npm 包信息
 
 - **包名**: `angular-weui-components`
-- **版本**: `0.1.0-alpha.1`
+- **版本**: `0.1.0-alpha.2`
 - **标签**: `alpha`
 - **安装**: `npm install angular-weui-components@alpha`
 - **npm页面**: https://www.npmjs.com/package/angular-weui-components
@@ -168,6 +168,12 @@ npm run storybook
 MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 📋 更新日志
+
+### v0.1.0-alpha.2 (2026-03-23)
+- 📝 更新README文档，添加详细的使用说明
+- 📦 完善npm包信息和安装指南
+- 🔧 添加组件使用示例代码
+- 📚 改进文档结构和分类
 
 ### v0.1.0-alpha.1 (2026-03-23)
 - 🎉 初始版本发布
