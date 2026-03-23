@@ -1,0 +1,1749 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-b09e33effc26b377de3ff9c5d36297bf632efe029ade38d93c9b8e6e5981a9d63c8d08a0ce3b74e7b14d5695e5dfa6c1023881dec3071d592a46fffa69f9f0a3",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<app-demo></app-demo>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'angular-weui'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "DemoComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { DemoComponent } from './demo';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [DemoComponent],\r\n  template: '<app-demo></app-demo>',\r\n  styles: []\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-weui';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": " <button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 760,
+                            "end": 773,
+                            "kind": 328,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 761,
+                                "end": 769,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 29,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 41,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 43
+                    }
+                }
+            }
+        },
+        {
+            "name": "DemoComponent",
+            "id": "component-DemoComponent-3e4a06c97ad9f09c842bcd7afd8667c62a3e121561e03a92332eaa22fcae9903bb71e730157c25eca6488a45e322f01abf69c878d3f65cf7c4da65c65ab56b36",
+            "file": "src/app/demo.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-demo",
+            "styleUrls": [
+                "./demo.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./demo.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "actions",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WeUIActionSheetItem[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 84
+                },
+                {
+                    "name": "actionsheetItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WeUIActionSheetItem[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 85
+                },
+                {
+                    "name": "actionSheetVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 83
+                },
+                {
+                    "name": "activeTabIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 88
+                },
+                {
+                    "name": "alertVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 74
+                },
+                {
+                    "name": "buttonCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 70
+                },
+                {
+                    "name": "cityColumns",
+                    "defaultValue": "[\n    [\n      { label: '北京', value: 'beijing' },\n      { label: '上海', value: 'shanghai' },\n      { label: '广州', value: 'guangzhou' },\n      { label: '深圳', value: 'shenzhen' }\n    ],\n    [\n      { label: '朝阳区', value: 'chaoyang' },\n      { label: '海淀区', value: 'haidian' },\n      { label: '东城区', value: 'dongcheng' },\n      { label: '西城区', value: 'xicheng' }\n    ]\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WeUIPickerColumn[][]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 131
+                },
+                {
+                    "name": "componentStep",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 99
+                },
+                {
+                    "name": "confirmVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 75
+                },
+                {
+                    "name": "currentSection",
+                    "defaultValue": "'home'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 90
+                },
+                {
+                    "name": "currentStep",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 96
+                },
+                {
+                    "name": "dateColumns",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WeUIPickerColumn[][]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 149
+                },
+                {
+                    "name": "dateVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 147
+                },
+                {
+                    "name": "dialogVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 73
+                },
+                {
+                    "name": "email",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 105
+                },
+                {
+                    "name": "galleryImages",
+                    "defaultValue": "[\n    { src: 'https://www.bing.com/th?id=OHR.TadamiRiver_ZH-CN8656732915_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=400&h=300&rs=1', alt: '日本田麦川', description: '日本田麦川 - 秋日里如诗如画的梯田风光' },\n    { src: 'https://www.bing.com/th?id=OHR.CormorantsSky_ZH-CN8589139483_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=400&h=300&rs=1', alt: '鸬鹚与天空', description: '鸬鹚与天空 - 壮观的鸟群飞行景象' },\n    { src: 'https://www.bing.com/th?id=OHR.SnowMushroom_ZH-CN8514354219_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=400&h=300&rs=1', alt: '雪中蘑菇', description: '雪中蘑菇 - 冬日里独特的自然奇观' }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 116
+                },
+                {
+                    "name": "galleryIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 122
+                },
+                {
+                    "name": "galleryVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 121
+                },
+                {
+                    "name": "isLoading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                },
+                {
+                    "name": "isLoadingMore",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 126
+                },
+                {
+                    "name": "listData",
+                    "defaultValue": "[\n    { id: 1, label: '文字标题', value: '详细信息', desc: '描述信息' },\n    { id: 2, label: '带图标', value: '图标内容', icon: 'weui-icon-success' },\n    { id: 3, label: '可点击', value: '点击查看', arrow: true },\n    { id: 4, label: '禁用状态', value: '不可操作', disabled: true }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 108
+                },
+                {
+                    "name": "loadingTimer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 152,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "loadMoreType",
+                    "defaultValue": "'loading'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"loading\" | \"nodata\" | \"loadingline\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 125
+                },
+                {
+                    "name": "password",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 103
+                },
+                {
+                    "name": "phone",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 104
+                },
+                {
+                    "name": "pickerVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 129
+                },
+                {
+                    "name": "progressTimer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 153,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "progressValue",
+                    "defaultValue": "35",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 93
+                },
+                {
+                    "name": "selectedCity",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 130
+                },
+                {
+                    "name": "selectedDate",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 148
+                },
+                {
+                    "name": "selectedDateIndexes",
+                    "defaultValue": "[5, 2, 22]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 150
+                },
+                {
+                    "name": "tabbarItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WeUITabbarItem[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 89
+                },
+                {
+                    "name": "toastMessage",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 80
+                },
+                {
+                    "name": "toastType",
+                    "defaultValue": "'success'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"success\" | \"warning\" | \"error\" | \"info\" | \"loading\" | \"text\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 79
+                },
+                {
+                    "name": "toastVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 78
+                },
+                {
+                    "name": "username",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 102
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clearTimers",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 201,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "closeGallery",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 352,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleActionCancel",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 288,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleActionSelect",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "WeUIActionSheetItem",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 283,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "WeUIActionSheetItem",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleAlertConfirm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 246,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleBack",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 300,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleButtonClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 211,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleCellClick",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 387,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleConfirmCancel",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 256,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleConfirmOk",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 251,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleDateChange",
+                    "args": [
+                        {
+                            "name": "result",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 431,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "result",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleDateConfirm",
+                    "args": [
+                        {
+                            "name": "result",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 468,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "result",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleDialogCancel",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 241,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleDialogConfirm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 236,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handlePickerCancel",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 403,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handlePickerConfirm",
+                    "args": [
+                        {
+                            "name": "result",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 397,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "result",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleSubmit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 370,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "handleTabChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "literal type",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 294,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "literal type",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "hideToast",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 274,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "loadMore",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 357,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "nextComponentStep",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 334,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "nextStep",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 321,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 197,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 155,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openActionSheet",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 279,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openAlert",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 228,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openCityPicker",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 392,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openConfirm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 232,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDatePicker",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 409,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDialog",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 224,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openGallery",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 347,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "prevComponentStep",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 340,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "prevStep",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 327,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "resetLoadMore",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 365,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "showSection",
+                    "args": [
+                        {
+                            "name": "section",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 475,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "section",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "showToast",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "\"success\" | \"warning\" | \"error\" | \"info\" | \"loading\" | \"text\"",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "message",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 262,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "\"success\" | \"warning\" | \"error\" | \"info\" | \"loading\" | \"text\"",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "startProgress",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 305,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleLoading",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 216,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "updateDateColumns",
+                    "args": [
+                        {
+                            "name": "yearIndex",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "monthIndex",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 441,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "yearIndex",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "monthIndex",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "WeUIButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUICellComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIDialogComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIToastComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIActionSheetComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIInputComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUINavbarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUITabbarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIProgressComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIArticleComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIFlexComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIFlexItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIGridComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIGridItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIListComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUILoadmoreComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIPanelComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIPreviewComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIPreviewItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIGalleryComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIFooterComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIStepsComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIStepComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIBadgeComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "WeUIPickerComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, OnDestroy } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\n\n// 导入所有组件\nimport { WeUIButtonComponent } from '../../projects/components/button/src/button.component';\nimport { WeUICellComponent } from '../../projects/components/cell/src/cell.component';\nimport { WeUIDialogComponent } from '../../projects/components/dialog/src/dialog.component';\nimport { WeUIToastComponent } from '../../projects/components/toast/src/toast.component';\nimport { WeUIActionSheetComponent, WeUIActionSheetItem } from '../../projects/components/actionsheet/src/actionsheet.component';\nimport { WeUIInputComponent } from '../../projects/components/form/src/input.component';\nimport { WeUINavbarComponent } from '../../projects/components/navbar/src/navbar.component';\nimport { WeUITabbarComponent, WeUITabbarItem } from '../../projects/components/tabbar/src/tabbar.component';\nimport { WeUIIconComponent } from '../../projects/components/icon/src/icon.component';\nimport { WeUIProgressComponent } from '../../projects/components/progress/src/progress.component';\nimport { WeUIArticleComponent } from '../../projects/components/article/src/article.component';\nimport { WeUIFlexComponent } from '../../projects/components/flex/src/flex.component';\nimport { WeUIFlexItemComponent } from '../../projects/components/flex/src/flex-item.component';\nimport { WeUIGridComponent } from '../../projects/components/grid/src/grid.component';\nimport { WeUIGridItemComponent } from '../../projects/components/grid/src/grid-item.component';\nimport { WeUIListComponent } from '../../projects/components/list/src/list.component';\nimport { WeUILoadmoreComponent } from '../../projects/components/loadmore/src/loadmore.component';\nimport { WeUIPanelComponent } from '../../projects/components/panel/src/panel.component';\nimport { WeUIPreviewComponent, WeUIPreviewItemComponent } from '../../projects/components/preview/src/preview.component';\nimport { WeUIGalleryComponent } from '../../projects/components/gallery/src/gallery.component';\nimport { WeUIFooterComponent } from '../../projects/components/footer/src/footer.component';\nimport { WeUIStepsComponent, WeUIStepComponent } from '../../projects/components/steps/src/steps.component';\nimport { WeUIBadgeComponent } from '../../projects/components/badge/src/badge.component';\nimport { WeUIPickerComponent, WeUIPickerColumn } from '../../projects/components/picker/src/picker.component';\n\n@Component({\n  selector: 'app-demo',\n  standalone: true,\n  imports: [\n    CommonModule,\n    FormsModule,\n    WeUIButtonComponent,\n    WeUICellComponent,\n    WeUIDialogComponent,\n    WeUIToastComponent,\n    WeUIActionSheetComponent,\n    WeUIInputComponent,\n    WeUINavbarComponent,\n    WeUITabbarComponent,\n    WeUIIconComponent,\n    WeUIProgressComponent,\n    WeUIArticleComponent,\n    WeUIFlexComponent,\n    WeUIFlexItemComponent,\n    WeUIGridComponent,\n    WeUIGridItemComponent,\n    WeUIListComponent,\n    WeUILoadmoreComponent,\n    WeUIPanelComponent,\n    WeUIPreviewComponent,\n    WeUIPreviewItemComponent,\n    WeUIGalleryComponent,\n    WeUIFooterComponent,\n    WeUIStepsComponent,\n    WeUIStepComponent,\n    WeUIBadgeComponent,\n    WeUIPickerComponent\n  ],\n  templateUrl: './demo.html',\n  styleUrls: ['./demo.scss']\n})\nexport class DemoComponent implements OnInit, OnDestroy {\n  // 按钮状态\n  isLoading = false;\n  buttonCount = 0;\n\n  // 对话框状态\n  dialogVisible = false;\n  alertVisible = false;\n  confirmVisible = false;\n\n  // Toast 状态\n  toastVisible = false;\n  toastType: 'success' | 'warning' | 'error' | 'info' | 'loading' | 'text' = 'success';\n  toastMessage = '';\n\n  // ActionSheet 状态\n  actionSheetVisible = false;\n  actions: WeUIActionSheetItem[] = [];\n  actionsheetItems: WeUIActionSheetItem[] = [];\n\n  // 导航栏和标签栏\n  activeTabIndex = 0;\n  tabbarItems: WeUITabbarItem[] = [];\n  currentSection = 'home';\n\n  // 进度条\n  progressValue = 35;\n\n  // 步骤条\n  currentStep = 1;\n  \n  // 组件页步骤条独立状态\n  componentStep = 1;\n\n  // 输入框\n  username = '';\n  password = '';\n  phone = '';\n  email = '';\n\n  // 列表数据\n  listData = [\n    { id: 1, label: '文字标题', value: '详细信息', desc: '描述信息' },\n    { id: 2, label: '带图标', value: '图标内容', icon: 'weui-icon-success' },\n    { id: 3, label: '可点击', value: '点击查看', arrow: true },\n    { id: 4, label: '禁用状态', value: '不可操作', disabled: true }\n  ];\n\n  // 图片列表 - 使用 Bing 每日图片\n  galleryImages = [\n    { src: 'https://www.bing.com/th?id=OHR.TadamiRiver_ZH-CN8656732915_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=400&h=300&rs=1', alt: '日本田麦川', description: '日本田麦川 - 秋日里如诗如画的梯田风光' },\n    { src: 'https://www.bing.com/th?id=OHR.CormorantsSky_ZH-CN8589139483_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=400&h=300&rs=1', alt: '鸬鹚与天空', description: '鸬鹚与天空 - 壮观的鸟群飞行景象' },\n    { src: 'https://www.bing.com/th?id=OHR.SnowMushroom_ZH-CN8514354219_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=400&h=300&rs=1', alt: '雪中蘑菇', description: '雪中蘑菇 - 冬日里独特的自然奇观' }\n  ];\n  galleryVisible = false;\n  galleryIndex = 0;\n\n  // 加载更多\n  loadMoreType: 'loading' | 'nodata' | 'loadingline' = 'loading';\n  isLoadingMore = false;\n\n  // 选择器状态\n  pickerVisible = false;\n  selectedCity = '';\n  cityColumns: WeUIPickerColumn[][] = [\n    [\n      { label: '北京', value: 'beijing' },\n      { label: '上海', value: 'shanghai' },\n      { label: '广州', value: 'guangzhou' },\n      { label: '深圳', value: 'shenzhen' }\n    ],\n    [\n      { label: '朝阳区', value: 'chaoyang' },\n      { label: '海淀区', value: 'haidian' },\n      { label: '东城区', value: 'dongcheng' },\n      { label: '西城区', value: 'xicheng' }\n    ]\n  ];\n\n  // 日期选择器状态\n  dateVisible = false;\n  selectedDate = '';\n  dateColumns: WeUIPickerColumn[][] = [];\n  selectedDateIndexes: number[] = [5, 2, 22]; // 默认选中今天的索引\n\n  private loadingTimer: any;\n  private progressTimer: any;\n\n  ngOnInit(): void {\n    // 初始化标签栏数据\n    this.tabbarItems = [\n      { id: 'home', text: '首页', icon: '🔥' },\n      { id: 'components', text: '组件', icon: '📦' },\n      { id: 'gallery', text: '图库', icon: '🖼️', badge: 3 },\n      { id: 'profile', text: '我的', icon: '👤' }\n    ];\n\n    // 初始化操作栏数据\n    this.actionsheetItems = [\n      { name: '编辑', type: 'default', icon: 'weui-icon-edit' },\n      { name: '删除', type: 'warn', icon: 'weui-icon-delete' }\n    ];\n\n    // 初始化日期选择器数据\n    const currentYear = new Date().getFullYear();\n    this.dateColumns = [\n      // 年份 (扩展到2020-2030，共11年)\n      Array.from({ length: 11 }, (_, i) => ({\n        label: `${2020 + i}年`,\n        value: 2020 + i\n      })),\n      // 月份 (1-12)\n      Array.from({ length: 12 }, (_, i) => ({\n        label: `${i + 1}月`,\n        value: i + 1\n      })),\n      // 日期 (1-31) - 初始设置为31天，会在打开时根据具体年月调整\n      Array.from({ length: 31 }, (_, i) => ({\n        label: `${i + 1}日`,\n        value: i + 1\n      }))\n    ];\n    \n    // 初始化时也设置正确的日期列\n    const today = new Date();\n    const yearIndex = currentYear - 2020; // 计算当前年份在2020-2030范围内的索引\n    const monthIndex = today.getMonth(); // 当前月份索引\n    this.updateDateColumns(yearIndex, monthIndex);\n  }\n\n  ngOnDestroy(): void {\n    this.clearTimers();\n  }\n\n  private clearTimers(): void {\n    if (this.loadingTimer) {\n      clearTimeout(this.loadingTimer);\n    }\n    if (this.progressTimer) {\n      clearInterval(this.progressTimer);\n    }\n  }\n\n  // 按钮操作\n  handleButtonClick(): void {\n    this.buttonCount++;\n    this.showToast('success', `按钮点击次数: ${this.buttonCount}`);\n  }\n\n  toggleLoading(): void {\n    this.isLoading = true;\n    this.loadingTimer = setTimeout(() => {\n      this.isLoading = false;\n    }, 2000);\n  }\n\n  // 对话框操作\n  openDialog(): void {\n    this.dialogVisible = true;\n  }\n\n  openAlert(): void {\n    this.alertVisible = true;\n  }\n\n  openConfirm(): void {\n    this.confirmVisible = true;\n  }\n\n  handleDialogConfirm(): void {\n    this.dialogVisible = false;\n    this.showToast('success', '确认操作成功');\n  }\n\n  handleDialogCancel(): void {\n    this.dialogVisible = false;\n    this.showToast('info', '取消操作');\n  }\n\n  handleAlertConfirm(): void {\n    this.alertVisible = false;\n    this.showToast('success', 'Alert 已关闭');\n  }\n\n  handleConfirmOk(): void {\n    this.confirmVisible = false;\n    this.showToast('success', '确认删除');\n  }\n\n  handleConfirmCancel(): void {\n    this.confirmVisible = false;\n    this.showToast('info', '取消删除');\n  }\n\n  // Toast 操作\n  showToast(type: 'success' | 'warning' | 'error' | 'info' | 'loading' | 'text', message: string): void {\n    this.toastType = type;\n    this.toastMessage = message;\n    this.toastVisible = true;\n\n    if (type !== 'loading') {\n      setTimeout(() => {\n        this.toastVisible = false;\n      }, 2000);\n    }\n  }\n\n  hideToast(): void {\n    this.toastVisible = false;\n  }\n\n  // ActionSheet 操作\n  openActionSheet(): void {\n    this.actionSheetVisible = true;\n  }\n\n  handleActionSelect(item: WeUIActionSheetItem, index: number): void {\n    this.actionSheetVisible = false;\n    this.showToast('success', `选择了: ${item.name}`);\n  }\n\n  handleActionCancel(): void {\n    this.actionSheetVisible = false;\n    this.showToast('info', '已取消');\n  }\n\n  // 标签栏操作\n  handleTabChange(event: { item: WeUITabbarItem; index: number }): void {\n    this.activeTabIndex = event.index;\n    this.currentSection = event.item.id;\n  }\n\n  // 导航栏操作\n  handleBack(): void {\n    this.showToast('info', '返回上一页');\n  }\n\n  // 进度条操作\n  startProgress(): void {\n    this.progressValue = 0;\n    this.progressTimer = setInterval(() => {\n      if (this.progressValue < 100) {\n        this.progressValue += 5;\n        if (this.progressValue >= 100) {\n          clearInterval(this.progressTimer);\n          setTimeout(() => {\n            this.progressValue = 0;\n          }, 1500);\n        }\n      }\n    }, 200);\n  }\n\n  // 步骤条操作\n  nextStep(): void {\n    if (this.currentStep < 4) {\n      this.currentStep++;\n    }\n  }\n\n  prevStep(): void {\n    if (this.currentStep > 1) {\n      this.currentStep--;\n    }\n  }\n\n  // 组件页步骤条操作\n  nextComponentStep(): void {\n    if (this.componentStep < 4) {\n      this.componentStep++;\n    }\n  }\n\n  prevComponentStep(): void {\n    if (this.componentStep > 1) {\n      this.componentStep--;\n    }\n  }\n\n  // 图库操作\n  openGallery(index: number): void {\n    this.galleryIndex = index;\n    this.galleryVisible = true;\n  }\n\n  closeGallery(): void {\n    this.galleryVisible = false;\n  }\n\n  // 加载更多\n  loadMore(): void {\n    this.isLoadingMore = true;\n    setTimeout(() => {\n      this.loadMoreType = 'nodata';\n      this.isLoadingMore = false;\n    }, 2000);\n  }\n\n  resetLoadMore(): void {\n    this.loadMoreType = 'loading';\n  }\n\n  // 表单操作\n  handleSubmit(): void {\n    if (!this.username) {\n      this.showToast('error', '请输入用户名');\n      return;\n    }\n    if (!this.password) {\n      this.showToast('error', '请输入密码');\n      return;\n    }\n    if (!this.phone) {\n      this.showToast('error', '请输入手机号');\n      return;\n    }\n    this.showToast('success', '表单提交成功');\n  }\n\n  // 单元格点击\n  handleCellClick(item: any): void {\n    this.showToast('info', `点击了: ${item.label}`);\n  }\n\n  // 选择器操作\n  openCityPicker(): void {\n    // 重置并初始化选择器，设置默认选中北京\n    this.pickerVisible = true;\n  }\n\n  handlePickerConfirm(result: any): void {\n    this.pickerVisible = false;\n    this.selectedCity = result.labels.join(' ');\n    this.showToast('success', `选择了: ${this.selectedCity}`);\n  }\n\n  handlePickerCancel(): void {\n    this.pickerVisible = false;\n    this.showToast('info', '已取消');\n  }\n\n  // 日期选择器操作\n  openDatePicker(): void {\n    // 设置默认选中今天\n    const today = new Date();\n    const currentYear = today.getFullYear(); // 2026\n    const currentMonth = today.getMonth() + 1; // 3 (3月)\n    const currentDate = today.getDate(); // 23\n    \n    // 计算索引偏移\n    const yearIndex = currentYear - 2020; // 2026 - 2020 = 6\n    const monthIndex = currentMonth - 1; // 3 - 1 = 2 (第3个月，索引2)\n    const dateIndex = currentDate - 1; // 23 - 1 = 22 (第23天，索引22)\n    \n    // 更新选中索引\n    this.selectedDateIndexes = [yearIndex, monthIndex, dateIndex];\n    \n    // 确保日期列正确（根据当前年月计算天数）\n    this.updateDateColumns(yearIndex, monthIndex);\n    \n    this.dateVisible = true;\n  }\n\n  // 日期选择器变化处理\n  handleDateChange(result: any): void {\n    // 更新选中索引\n    this.selectedDateIndexes = result.indexes || [0, 0, 0];\n    \n    // 根据选中的年月更新日期列\n    const indexes = result.indexes || [0, 0, 0];\n    this.updateDateColumns(indexes[0], indexes[1]);\n  }\n\n  // 更新日期列（根据年月计算正确的天数）\n  private updateDateColumns(yearIndex: number, monthIndex: number): void {\n    // 确保索引在有效范围内\n    if (yearIndex < 0 || yearIndex >= this.dateColumns[0].length ||\n        monthIndex < 0 || monthIndex >= this.dateColumns[1].length) {\n      return;\n    }\n    \n    const year = this.dateColumns[0][yearIndex]?.value;\n    const month = this.dateColumns[1][monthIndex]?.value;\n    \n    if (year && month) {\n      // 计算该月的天数\n      const daysInMonth = new Date(year, month, 0).getDate();\n      \n      // 更新日期列\n      this.dateColumns[2] = Array.from({ length: daysInMonth }, (_, i) => ({\n        label: `${i + 1}日`,\n        value: i + 1\n      }));\n      \n      // 确保当前选中的日期索引在新的天数范围内\n      if (this.selectedDateIndexes[2] >= daysInMonth) {\n        this.selectedDateIndexes[2] = daysInMonth - 1;\n      }\n    }\n  }\n\n  handleDateConfirm(result: any): void {\n    this.dateVisible = false;\n    this.selectedDate = result.labels.join('');\n    this.showToast('success', `选择了: ${this.selectedDate}`);\n  }\n\n  // 切换部分\n  showSection(section: string): void {\n    this.currentSection = section;\n    window.scrollTo({ top: 0, behavior: 'smooth' });\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// ============================================\n// Angular WeUI 演示样式\n// ============================================\n\n// 变量\n$primary-color: #07c160;\n$text-color: #333;\n$text-secondary: #666;\n$text-muted: #999;\n$bg-color: #f5f5f5;\n$border-color: #e5e5e5;\n$spacing-unit: 16px;\n\n// 容器\n.demo-container {\n  max-width: 100%;\n  margin: 0 auto;\n  padding-bottom: 60px;\n  background-color: var(--weui-bg-color);\n  min-height: 100vh;\n}\n\n// 组件导航\n.component-nav {\n  display: flex;\n  justify-content: space-around;\n  padding: 12px 16px;\n  background: #fff;\n  border-bottom: 1px solid $border-color;\n  position: sticky;\n  top: 44px;\n  z-index: 10;\n\n  .nav-item {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 4px;\n    background: none;\n    border: none;\n    cursor: pointer;\n    padding: 8px 12px;\n    border-radius: 8px;\n    transition: all 0.2s;\n\n    .nav-icon {\n      font-size: 24px;\n    }\n\n    .nav-text {\n      font-size: 12px;\n      color: $text-secondary;\n    }\n\n    &:hover {\n      background: rgba($primary-color, 0.1);\n    }\n\n    &.active {\n      background: rgba($primary-color, 0.15);\n\n      .nav-text {\n        color: $primary-color;\n        font-weight: 500;\n      }\n    }\n  }\n}\n\n// 演示区块\n.demo-section {\n  padding: $spacing-unit;\n  padding-bottom: 80px;\n}\n\n.section-header {\n  text-align: center;\n  padding: 32px 0;\n\n  h2 {\n    font-size: 24px;\n    font-weight: 600;\n    color: $text-color;\n    margin: 0 0 8px 0;\n  }\n\n  p {\n    font-size: 14px;\n    color: $text-secondary;\n    margin: 0;\n  }\n}\n\n// 功能卡片网格\n.feature-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 12px;\n  margin-bottom: 24px;\n\n  .feature-card {\n    background: #fff;\n    border-radius: 12px;\n    padding: 20px;\n    text-align: center;\n    cursor: pointer;\n    transition: all 0.2s;\n    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);\n\n    &:active {\n      transform: scale(0.98);\n    }\n\n    .feature-icon {\n      font-size: 32px;\n      margin-bottom: 12px;\n    }\n\n    .feature-title {\n      font-size: 16px;\n      font-weight: 600;\n      color: $text-color;\n      margin-bottom: 4px;\n    }\n\n    .feature-desc {\n      font-size: 12px;\n      color: $text-muted;\n    }\n  }\n}\n\n// 快速开始\n.quick-start {\n  background: #fff;\n  border-radius: 12px;\n  padding: 16px;\n  margin-bottom: 24px;\n\n  h3 {\n    font-size: 16px;\n    font-weight: 600;\n    margin: 0 0 12px 0;\n    color: $text-color;\n  }\n\n  .code-block {\n    background: #f7f7f7;\n    border-radius: 8px;\n    padding: 12px;\n    margin: 0;\n    overflow-x: auto;\n    font-size: 13px;\n    line-height: 1.5;\n\n    code {\n      color: $text-color;\n      font-family: 'Monaco', 'Menlo', monospace;\n    }\n  }\n}\n\n// 最新活动\n.activity-section {\n  background: #fff;\n  border-radius: 12px;\n  padding: 16px;\n  margin-bottom: 24px;\n\n  h3 {\n    font-size: 16px;\n    font-weight: 600;\n    margin: 0 0 12px 0;\n    color: $text-color;\n  }\n\n  .activity-list {\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n  }\n\n  .activity-item {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 12px;\n    background: #fafafa;\n    border-radius: 8px;\n\n    .activity-title {\n      font-size: 14px;\n      font-weight: 500;\n      color: $text-color;\n      margin-bottom: 4px;\n    }\n\n    .activity-desc {\n      font-size: 12px;\n      color: $text-muted;\n    }\n\n    .activity-badge {\n      flex-shrink: 0;\n    }\n  }\n}\n\n// 演示块\n.demo-block {\n  background: #fff;\n  border-radius: 12px;\n  padding: 16px;\n  margin-bottom: 16px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);\n\n  .block-title {\n    font-size: 16px;\n    font-weight: 600;\n    color: $text-color;\n    margin: 0 0 4px 0;\n  }\n\n  .block-desc {\n    font-size: 13px;\n    color: $text-muted;\n    margin: 0 0 16px 0;\n  }\n}\n\n// 演示行\n.demo-row {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 12px;\n  margin-bottom: 12px;\n\n  &:last-child {\n    margin-bottom: 0;\n  }\n\n  weui-button {\n    flex-shrink: 0;\n  }\n}\n\n// 单元格\n.weui-cells {\n  background: #fff;\n  border-radius: 8px;\n  overflow: hidden;\n  margin: 0;\n}\n\n// 步骤操作\n.step-actions {\n  display: flex;\n  justify-content: center;\n  gap: 16px;\n  margin-top: 16px;\n}\n\n// 进度条\n.progress-demo {\n  margin-bottom: 12px;\n\n  weui-progress {\n    display: block;\n  }\n\n  .progress-status {\n    text-align: center;\n    color: $primary-color;\n    font-size: 14px;\n    margin-top: 8px;\n  }\n}\n\n// Flex 演示\n.flex-demo {\n  p {\n    font-size: 14px;\n    color: $text-secondary;\n    margin: 12px 0 8px 0;\n  }\n\n  .flex-item {\n    background: rgba($primary-color, 0.1);\n    color: $primary-color;\n    text-align: center;\n    padding: 16px 8px;\n    border-radius: 8px;\n    font-size: 14px;\n  }\n}\n\n// 网格演示\n.grid-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 12px 0;\n\n  .grid-icon {\n    font-size: 28px;\n    margin-bottom: 8px;\n  }\n\n  .grid-label {\n    font-size: 12px;\n    color: $text-color;\n  }\n}\n\n// 加载更多演示\n.loadmore-demo {\n  background: #fafafa;\n  border-radius: 8px;\n  padding: 16px;\n\n  .loadmore-content {\n    height: 100px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: $text-muted;\n    font-size: 14px;\n  }\n}\n\n// 面板媒体\n.panel-media {\n  display: flex;\n  gap: 12px;\n  padding: 12px;\n\n  .media-item {\n    flex: 1;\n\n    img {\n      width: 100%;\n      border-radius: 8px;\n      display: block;\n    }\n  }\n}\n\n// 图标网格\n.icon-grid {\n  display: grid;\n  grid-template-columns: repeat(5, 1fr);\n  gap: 12px;\n\n  .icon-item {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 8px;\n    padding: 12px 0;\n\n    weui-icon {\n      display: block;\n    }\n\n    span {\n      font-size: 11px;\n      color: $text-muted;\n    }\n  }\n}\n\n// 图库网格\n.gallery-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 4px;\n\n  .gallery-item {\n    aspect-ratio: 1;\n    overflow: hidden;\n    border-radius: 4px;\n    cursor: pointer;\n\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n      transition: transform 0.2s;\n    }\n\n    &:active img {\n      transform: scale(0.95);\n    }\n  }\n}\n\n// 用户卡片\n.profile-card {\n  display: flex;\n  align-items: center;\n  padding: 20px;\n  background: linear-gradient(135deg, $primary-color 0%, #1aad19 100%);\n  border-radius: 12px;\n  margin-bottom: 16px;\n\n  .profile-avatar {\n    width: 60px;\n    height: 60px;\n    border-radius: 50%;\n    overflow: hidden;\n    margin-right: 16px;\n    background: #fff;\n\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n\n  .profile-info {\n    flex: 1;\n\n    .profile-name {\n      font-size: 18px;\n      font-weight: 600;\n      color: #fff;\n      margin-bottom: 4px;\n    }\n\n    .profile-id {\n      font-size: 13px;\n      color: rgba(255, 255, 255, 0.8);\n    }\n  }\n}\n\n// 表单组\n.form-group {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  margin-bottom: 16px;\n}\n\n// ============================================\n// 响应式适配\n// ============================================\n\n@media (min-width: 768px) {\n  .demo-container {\n    max-width: 600px;\n    margin: 0 auto;\n    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);\n    border-radius: 12px;\n    margin-top: 20px;\n    margin-bottom: 20px;\n  }\n\n  .component-nav {\n    position: static;\n  }\n}\n\n// ============================================\n// 暗黑模式\n// ============================================\n\n@media (prefers-color-scheme: dark) {\n  .demo-container {\n    background-color: #1f1f1f;\n  }\n\n  .component-nav {\n    background: #1f1f1f;\n    border-color: #333;\n  }\n\n  .demo-block,\n  .quick-start,\n  .activity-section {\n    background: #2d2d2d;\n  }\n\n  .feature-grid .feature-card {\n    background: #2d2d2d;\n  }\n\n  .section-header h2,\n  .block-title,\n  .profile-card .profile-name,\n  .activity-title {\n    color: #fff;\n  }\n\n  .section-header p,\n  .block-desc,\n  .feature-desc,\n  .activity-desc {\n    color: #999;\n  }\n\n  .icon-grid .icon-item span {\n    color: #999;\n  }\n\n  .flex-demo .flex-item {\n    background: rgba($primary-color, 0.2);\n  }\n\n  .loadmore-demo {\n    background: #252525;\n  }\n\n  .panel-media .media-item img {\n    opacity: 0.8;\n  }\n\n  .weui-cells {\n    background: #2d2d2d;\n  }\n\n  .quick-start .code-block {\n    background: #252525;\n  }\n\n  .activity-item {\n    background: #252525;\n  }\n}\n\n// ============================================\n// 动画\n// ============================================\n\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n.demo-block {\n  animation: fadeIn 0.3s ease-out;\n}\n\n.demo-block:nth-child(2) { animation-delay: 0.05s; }\n.demo-block:nth-child(3) { animation-delay: 0.1s; }\n.demo-block:nth-child(4) { animation-delay: 0.15s; }\n.demo-block:nth-child(5) { animation-delay: 0.2s; }\n",
+                    "styleUrl": "./demo.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<!-- 导航栏 -->\n<weui-navbar \n  title=\"Angular WeUI 组件演示\" \n  [showBack]=\"false\"\n  (back)=\"handleBack()\">\n</weui-navbar>\n\n<div class=\"demo-container\">\n  <!-- 组件导航 -->\n  <div class=\"component-nav\">\n    <button \n      *ngFor=\"let item of tabbarItems; let i = index\"\n      class=\"nav-item\"\n      [class.active]=\"activeTabIndex === i\"\n      (click)=\"activeTabIndex = i; currentSection = item.id\">\n      <span class=\"nav-icon\">{{ item.icon }}</span>\n      <span class=\"nav-text\">{{ item.text }}</span>\n    </button>\n  </div>\n\n  <!-- 首页 -->\n  <div *ngIf=\"currentSection === 'home'\" class=\"demo-section\">\n    <div class=\"section-header\">\n      <h2>欢迎使用 Angular WeUI</h2>\n      <p>基于 WeUI 设计规范的 Angular 组件库</p>\n    </div>\n\n    <!-- 功能介绍 -->\n    <div class=\"feature-grid\">\n      <div class=\"feature-card\" (click)=\"showSection('components')\">\n        <div class=\"feature-icon\">📦</div>\n        <div class=\"feature-title\">21+ 组件</div>\n        <div class=\"feature-desc\">丰富的 UI 组件，满足各种业务场景</div>\n      </div>\n      <div class=\"feature-card\" (click)=\"showSection('gallery')\">\n        <div class=\"feature-icon\">🎨</div>\n        <div class=\"feature-title\">微信风格</div>\n        <div class=\"feature-desc\">与微信原生视觉体验一致</div>\n      </div>\n      <div class=\"feature-card\">\n        <div class=\"feature-icon\">⚡</div>\n        <div class=\"feature-title\">高性能</div>\n        <div class=\"feature-desc\">基于 Angular 最新特性优化</div>\n      </div>\n      <div class=\"feature-card\">\n        <div class=\"feature-icon\">🎯</div>\n        <div class=\"feature-title\">易定制</div>\n        <div class=\"feature-desc\">支持主题定制和 CSS 变量</div>\n      </div>\n    </div>\n\n    <!-- 快速开始 -->\n    <div class=\"quick-start\">\n      <h3>快速开始</h3>\n      <pre class=\"code-block\"><code>import {{ '{' }} WeUIButtonModule {{ '}' }} from 'angular-weui';\n\n@NgModule({{ '{' }}\n  imports: [WeUIButtonModule]\n{{ '}' }})\nexport class AppModule {{ '{' }} {{ '}' }}</code></pre>\n    </div>\n\n    <!-- 最新活动 -->\n    <div class=\"activity-section\">\n      <h3>最新活动</h3>\n      <div class=\"activity-list\">\n        <div class=\"activity-item\">\n          <div class=\"activity-content\">\n            <div class=\"activity-title\">WeUI 设计规范更新</div>\n            <div class=\"activity-desc\">新增多个组件，优化视觉体验</div>\n          </div>\n          <span class=\"activity-badge\">\n            <weui-badge value=\"NEW\"></weui-badge>\n          </span>\n        </div>\n        <div class=\"activity-item\">\n          <div class=\"activity-title\">暗黑模式支持</div>\n          <div class=\"activity-desc\">全面支持系统暗黑模式</div>\n          <span class=\"activity-badge\">\n            <weui-badge value=\"HOT\" status=\"warning\"></weui-badge>\n          </span>\n        </div>\n      </div>\n    </div>\n\n    <!-- 步骤条 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">操作步骤</h3>\n      <weui-steps [direction]=\"'horizontal'\">\n        <weui-step title=\"选择组件\" [status]=\"currentStep >= 1 ? (currentStep > 1 ? 'finish' : 'process') : 'wait'\"></weui-step>\n        <weui-step title=\"查看演示\" [status]=\"currentStep >= 2 ? (currentStep > 2 ? 'finish' : 'process') : 'wait'\"></weui-step>\n        <weui-step title=\"集成使用\" [status]=\"currentStep >= 3 ? (currentStep > 3 ? 'finish' : 'process') : 'wait'\"></weui-step>\n        <weui-step title=\"完成\" [status]=\"currentStep >= 4 ? 'finish' : 'wait'\"></weui-step>\n      </weui-steps>\n      <div class=\"step-actions\">\n        <weui-button buttonType=\"default\" size=\"small\" [disabled]=\"currentStep <= 1\" (click)=\"prevStep()\">上一步</weui-button>\n        <weui-button buttonType=\"primary\" size=\"small\" [disabled]=\"currentStep >= 4\" (click)=\"nextStep()\">下一步</weui-button>\n      </div>\n    </div>\n  </div>\n\n  <!-- 组件展示 -->\n  <div *ngIf=\"currentSection === 'components'\" class=\"demo-section\">\n    <!-- 按钮 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Button 按钮</h3>\n      <p class=\"block-desc\">基础按钮组件，支持多种类型和状态</p>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\">主要按钮</weui-button>\n        <weui-button buttonType=\"default\">默认按钮</weui-button>\n        <weui-button buttonType=\"warn\">警告按钮</weui-button>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" size=\"small\">小按钮</weui-button>\n        <weui-button buttonType=\"primary\" size=\"normal\">正常</weui-button>\n        <weui-button buttonType=\"primary\" size=\"large\">大按钮</weui-button>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" [plain]=\"true\">朴素按钮</weui-button>\n        <weui-button buttonType=\"primary\" [round]=\"true\">圆角按钮</weui-button>\n        <weui-button buttonType=\"primary\" [circle]=\"true\">●</weui-button>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" [block]=\"true\">块级按钮</weui-button>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" [loading]=\"isLoading\" (click)=\"toggleLoading()\">\n          {{ isLoading ? '加载中...' : '点击加载' }}\n        </weui-button>\n        <weui-button buttonType=\"default\" [disabled]=\"true\">禁用按钮</weui-button>\n        <weui-button buttonType=\"primary\" (click)=\"handleButtonClick()\">计数器: {{ buttonCount }}</weui-button>\n      </div>\n    </div>\n\n    <!-- 单元格 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Cell 单元格</h3>\n      <p class=\"block-desc\">列表项组件，支持多种样式</p>\n      \n      <div class=\"weui-cells\">\n        <weui-cell title=\"标题文字\" value=\"值\"></weui-cell>\n        <weui-cell title=\"带图标的单元格\" value=\"图标\">\n          <i slot=\"ft\" class=\"weui-icon-success weui-icon_msg\"></i>\n        </weui-cell>\n        <weui-cell title=\"可点击的单元格\" [clickable]=\"true\" value=\"跳转\"></weui-cell>\n        <weui-cell title=\"链接样式\" [isLink]=\"true\" value=\"跳转\"></weui-cell>\n        <weui-cell title=\"禁用状态\" [disabled]=\"true\" value=\"不可点击\"></weui-cell>\n      </div>\n    </div>\n\n    <!-- 按钮组 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">按钮组</h3>\n      <p class=\"block-desc\">配合单元格使用</p>\n      \n      <div class=\"weui-cells\">\n        <weui-cell title=\"打开对话框\" [clickable]=\"true\" (click)=\"openDialog()\">\n          <i slot=\"ft\" class=\"weui-icon-arrow\"></i>\n        </weui-cell>\n        <weui-cell title=\"打开警告框\" [clickable]=\"true\" (click)=\"openAlert()\">\n          <i slot=\"ft\" class=\"weui-icon-arrow\"></i>\n        </weui-cell>\n        <weui-cell title=\"打开确认框\" [clickable]=\"true\" (click)=\"openConfirm()\">\n          <i slot=\"ft\" class=\"weui-icon-arrow\"></i>\n        </weui-cell>\n        <weui-cell title=\"打开操作表\" [clickable]=\"true\" (click)=\"openActionSheet()\">\n          <i slot=\"ft\" class=\"weui-icon-arrow\"></i>\n        </weui-cell>\n      </div>\n    </div>\n\n    <!-- 对话框 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Dialog 对话框</h3>\n      <p class=\"block-desc\">模态对话框组件</p>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" (click)=\"openDialog()\">打开对话框</weui-button>\n        <weui-button buttonType=\"warn\" (click)=\"openAlert()\">打开警告框</weui-button>\n        <weui-button buttonType=\"default\" (click)=\"openConfirm()\">打开确认框</weui-button>\n      </div>\n    </div>\n\n    <!-- Toast -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Toast 提示</h3>\n      <p class=\"block-desc\">轻提示组件，用于显示操作结果</p>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" (click)=\"showToast('success', '操作成功')\">成功提示</weui-button>\n        <weui-button buttonType=\"default\" (click)=\"showToast('warning', '警告信息')\">警告提示</weui-button>\n        <weui-button buttonType=\"warn\" (click)=\"showToast('error', '操作失败')\">错误提示</weui-button>\n      </div>\n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" (click)=\"showToast('loading', '加载中...')\">加载提示</weui-button>\n        <weui-button buttonType=\"default\" (click)=\"showToast('text', '纯文本提示')\">文本提示</weui-button>\n      </div>\n    </div>\n\n    <!-- 操作表 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">ActionSheet 操作列表</h3>\n      <p class=\"block-desc\">从底部弹出的操作菜单</p>\n      \n      <weui-button buttonType=\"primary\" (click)=\"openActionSheet()\">打开操作表</weui-button>\n    </div>\n\n    <!-- 输入框 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Input 输入框</h3>\n      <p class=\"block-desc\">表单输入组件</p>\n      \n      <div class=\"form-group\">\n        <weui-input \n          [(ngModel)]=\"username\"\n          label=\"用户名\"\n          placeholder=\"请输入用户名\"\n          [clearable]=\"true\">\n        </weui-input>\n        \n        <weui-input \n          [(ngModel)]=\"password\"\n          type=\"password\"\n          label=\"密码\"\n          placeholder=\"请输入密码\">\n        </weui-input>\n        \n        <weui-input \n          [(ngModel)]=\"phone\"\n          type=\"tel\"\n          label=\"手机号\"\n          placeholder=\"请输入手机号\">\n        </weui-input>\n        \n        <weui-input \n          [(ngModel)]=\"email\"\n          type=\"email\"\n          label=\"邮箱\"\n          placeholder=\"请输入邮箱\">\n        </weui-input>\n      </div>\n      \n      <weui-button buttonType=\"primary\" [block]=\"true\" (click)=\"handleSubmit()\">提交表单</weui-button>\n    </div>\n\n    <!-- 进度条 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Progress 进度条</h3>\n      <p class=\"block-desc\">展示操作进度</p>\n      \n      <div class=\"progress-demo\">\n        <weui-progress [value]=\"progressValue\" [showText]=\"true\"></weui-progress>\n        <div class=\"progress-status\" *ngIf=\"progressValue >= 100\">完成!</div>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" (click)=\"startProgress()\">开始进度</weui-button>\n      </div>\n      \n      <div class=\"progress-demo\">\n        <weui-progress [value]=\"75\" status=\"success\" [showText]=\"true\"></weui-progress>\n      </div>\n      \n      <div class=\"progress-demo\">\n        <weui-progress [value]=\"50\" status=\"warning\" [showText]=\"true\"></weui-progress>\n      </div>\n      \n      <div class=\"progress-demo\">\n        <weui-progress [value]=\"25\" status=\"error\" [showText]=\"true\"></weui-progress>\n      </div>\n    </div>\n\n    <!-- 弹性布局 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Flex 弹性布局</h3>\n      <p class=\"block-desc\">基于 Flexbox 的布局组件</p>\n      \n      <div class=\"flex-demo\">\n        <p>基础布局:</p>\n        <weui-flex gap=\"md\">\n          <weui-flex-item><div class=\"flex-item\">1</div></weui-flex-item>\n          <weui-flex-item><div class=\"flex-item\">2</div></weui-flex-item>\n          <weui-flex-item><div class=\"flex-item\">3</div></weui-flex-item>\n        </weui-flex>\n        \n        <p>居中对齐:</p>\n        <weui-flex [justify]=\"'center'\" gap=\"md\">\n          <weui-flex-item><div class=\"flex-item\">居中</div></weui-flex-item>\n        </weui-flex>\n        \n        <p>两端对齐:</p>\n        <weui-flex [justify]=\"'between'\" gap=\"md\">\n          <weui-flex-item><div class=\"flex-item\">左侧</div></weui-flex-item>\n          <weui-flex-item><div class=\"flex-item\">右侧</div></weui-flex-item>\n        </weui-flex>\n      </div>\n    </div>\n\n    <!-- 网格 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Grid 网格</h3>\n      <p class=\"block-desc\">九宫格布局组件</p>\n      \n      <p>3列网格 (Emoji图标):</p>\n      <weui-grid>\n        <weui-grid-item *ngFor=\"let item of [1,2,3,4,5,6,7,8,9]\" \n                       [icon]=\"['📱', '💬', '📷', '🎵', '📹', '📍', '💳', '📤', '📥'][item - 1]\" \n                       [label]=\"['微信', '通讯录', '朋友圈', '小程序', '游戏', '收藏', '卡包', '表情', '设置'][item - 1]\">\n        </weui-grid-item>\n      </weui-grid>\n      \n      <p>2列网格 (图片图标):</p>\n      <weui-grid>\n        <weui-grid-item src=\"https://cn.bing.com/th?id=OHR.TadamiRiver_ZH-CN8656732915_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=28&h=28&rs=1\" label=\"风景\" iconAlt=\"风景图片\"></weui-grid-item>\n        <weui-grid-item src=\"https://cn.bing.com/th?id=OHR.CormorantsSky_ZH-CN8589139483_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=28&h=28&rs=1\" label=\"动物\" iconAlt=\"动物图片\"></weui-grid-item>\n        <weui-grid-item icon=\"🌟\" label=\"收藏\"></weui-grid-item>\n        <weui-grid-item icon=\"⚙️\" label=\"设置\"></weui-grid-item>\n      </weui-grid>\n    </div>\n\n    <!-- 列表 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">List 列表</h3>\n      <p class=\"block-desc\">带缩略图的列表组件</p>\n      \n      <weui-list [access]=\"true\">\n        <div class=\"list-item\" *ngFor=\"let item of listData\">\n          <span class=\"list-label\">{{ item.label }}</span>\n          <span class=\"list-value\">{{ item.value }}</span>\n          <i *ngIf=\"item.arrow\" class=\"weui-icon-arrow list-arrow\"></i>\n        </div>\n      </weui-list>\n    </div>\n\n    <!-- 加载更多 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Loadmore 加载更多</h3>\n      <p class=\"block-desc\">列表底部加载状态</p>\n      \n      <div class=\"loadmore-demo\">\n        <div class=\"loadmore-content\">列表内容区域</div>\n        <weui-loadmore \n          [type]=\"loadMoreType\"\n          [loadingText]=\"'正在加载...'\"\n          [nodataText]=\"'没有更多数据了'\">\n        </weui-loadmore>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"default\" size=\"small\" (click)=\"loadMore()\">加载更多</weui-button>\n        <weui-button buttonType=\"default\" size=\"small\" (click)=\"resetLoadMore()\">重置</weui-button>\n      </div>\n    </div>\n\n    <!-- 面板 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Panel 面板</h3>\n      <p class=\"block-desc\">卡片面板组件</p>\n      \n      <weui-panel title=\"图文组合列表\" more=\"查看更多\">\n        <div class=\"panel-media\">\n          <div class=\"media-item\" *ngFor=\"let item of [1,2,3]\">\n            <img [src]=\"'https://via.placeholder.com/100x100/07c160/ffffff?text=' + item\" alt=\"\" />\n          </div>\n        </div>\n      </weui-panel>\n    </div>\n\n    <!-- 预览 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Preview 预览</h3>\n      <p class=\"block-desc\">信息预览组件，常用于订单详情</p>\n      \n      <weui-preview \n        title=\"订单信息\"\n        subTitle=\"订单号: 202401010001\"\n        [value]=\"'¥99.00'\"\n        [valueBold]=\"true\"\n        primaryBtn=\"确认支付\"\n        secondaryBtn=\"取消订单\">\n        <weui-preview-item label=\"商品名称\" value=\"Angular WeUI 组件库\"></weui-preview-item>\n        <weui-preview-item label=\"购买数量\" value=\"1\"></weui-preview-item>\n        <weui-preview-item label=\"订单金额\" value=\"¥99.00\" [bold]=\"true\"></weui-preview-item>\n      </weui-preview>\n    </div>\n\n    <!-- 文章 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Article 文章</h3>\n      <p class=\"block-desc\">文章阅读组件</p>\n      \n      <weui-article \n        title=\"Angular WeUI 组件库正式发布\"\n        author=\"Angular WeUI Team\"\n        time=\"2024-01-01\">\n        <p>Angular WeUI 是一个基于 Angular 框架的 UI 组件库，旨在为开发者提供与微信原生视觉体验一致的 UI 组件。</p>\n        <p>组件库包含了按钮、表单、对话框、列表、网格等常用组件，并且支持主题定制和暗黑模式。</p>\n        <p>我们希望这个组件库能够帮助开发者快速构建高质量的移动端应用。</p>\n      </weui-article>\n    </div>\n\n    <!-- 图标 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Icon 图标</h3>\n      <p class=\"block-desc\">内置 SVG 图标</p>\n      \n      <div class=\"icon-grid\">\n        <div class=\"icon-item\">\n          <weui-icon type=\"success\" size=\"large\"></weui-icon>\n          <span>success</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"warning\" size=\"large\"></weui-icon>\n          <span>warning</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"error\" size=\"large\"></weui-icon>\n          <span>error</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"info\" size=\"large\"></weui-icon>\n          <span>info</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"search\" size=\"large\"></weui-icon>\n          <span>search</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"close\" size=\"large\"></weui-icon>\n          <span>close</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"loading\" size=\"large\" [spin]=\"true\"></weui-icon>\n          <span>loading</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"home\" size=\"large\"></weui-icon>\n          <span>home</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"star\" size=\"large\"></weui-icon>\n          <span>star</span>\n        </div>\n        <div class=\"icon-item\">\n          <weui-icon type=\"heart\" size=\"large\"></weui-icon>\n          <span>heart</span>\n        </div>\n      </div>\n    </div>\n\n    <!-- 徽章 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Badge 徽章</h3>\n      <p class=\"block-desc\">数字角标组件</p>\n      \n      <div class=\"demo-row\">\n        <weui-badge value=\"5\"></weui-badge>\n        <weui-badge value=\"99\"></weui-badge>\n        <weui-badge value=\"100\" [max]=\"99\"></weui-badge>\n        <weui-badge value=\"新\" shape=\"square\"></weui-badge>\n        <weui-badge value=\"\" shape=\"dot\"></weui-badge>\n      </div>\n      \n      <div class=\"demo-row\">\n        <weui-badge value=\"热\" status=\"warning\"></weui-badge>\n        <weui-badge value=\"NEW\" status=\"primary\"></weui-badge>\n        <weui-badge value=\"成功\" status=\"success\"></weui-badge>\n        <weui-badge value=\"错误\" status=\"error\"></weui-badge>\n      </div>\n    </div>\n\n    <!-- 步骤条 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Steps 步骤条</h3>\n      <p class=\"block-desc\">分步操作指示器</p>\n      \n      <weui-steps [direction]=\"'vertical'\">\n        <weui-step title=\"选择服务\" description=\"选择您需要的服务类型\" [status]=\"componentStep >= 1 ? (componentStep > 1 ? 'finish' : 'process') : 'wait'\"></weui-step>\n        <weui-step title=\"填写信息\" description=\"填写相关的服务信息\" [status]=\"componentStep >= 2 ? (componentStep > 2 ? 'finish' : 'process') : 'wait'\"></weui-step>\n        <weui-step title=\"确认订单\" description=\"确认订单信息并支付\" [status]=\"componentStep >= 3 ? (componentStep > 3 ? 'finish' : 'process') : 'wait'\"></weui-step>\n        <weui-step title=\"完成\" description=\"服务已完成\" [status]=\"componentStep >= 4 ? 'finish' : 'wait'\"></weui-step>\n      </weui-steps>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"default\" size=\"small\" [disabled]=\"componentStep <= 1\" (click)=\"prevComponentStep()\">上一步</weui-button>\n        <weui-button buttonType=\"primary\" size=\"small\" [disabled]=\"componentStep >= 4\" (click)=\"nextComponentStep()\">下一步</weui-button>\n      </div>\n    </div>\n\n    <!-- 选择器 -->\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Picker 选择器</h3>\n      <p class=\"block-desc\">多列滚动选择器组件</p>\n      \n      <div class=\"demo-row\">\n        <weui-button buttonType=\"primary\" (click)=\"openCityPicker()\">城市选择器</weui-button>\n        <weui-button buttonType=\"primary\" (click)=\"openDatePicker()\">日期选择器</weui-button>\n      </div>\n      <p *ngIf=\"selectedCity\" class=\"selected-result\">已选择城市: {{ selectedCity }}</p>\n      <p *ngIf=\"selectedDate\" class=\"selected-result\">已选择日期: {{ selectedDate }}</p>\n    </div>\n  </div>\n\n  <!-- 图库 -->\n  <div *ngIf=\"currentSection === 'gallery'\" class=\"demo-section\">\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">Gallery 图库</h3>\n      <p class=\"block-desc\">图片预览组件，支持滑动和删除</p>\n      \n      <div class=\"gallery-grid\">\n        <div \n          *ngFor=\"let img of galleryImages; let i = index\"\n          class=\"gallery-item\"\n          (click)=\"openGallery(i)\">\n          <img [src]=\"img.src\" [alt]=\"img.alt\" />\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 我的 -->\n  <div *ngIf=\"currentSection === 'profile'\" class=\"demo-section\">\n    <div class=\"demo-block\">\n      <h3 class=\"block-title\">用户中心</h3>\n      \n      <!-- 用户信息卡片 -->\n      <div class=\"profile-card\">\n        <div class=\"profile-avatar\">\n          <img src=\"https://via.placeholder.com/80x80/07c160/ffffff?text=User\" alt=\"avatar\" />\n        </div>\n        <div class=\"profile-info\">\n          <div class=\"profile-name\">Angular Developer</div>\n          <div class=\"profile-id\">ID: 123456789</div>\n        </div>\n      </div>\n      \n      <!-- 设置列表 -->\n      <div class=\"weui-cells\">\n        <weui-cell title=\"个人资料\" [isLink]=\"true\" value=\"\"></weui-cell>\n        <weui-cell title=\"账户安全\" [isLink]=\"true\" value=\"\"></weui-cell>\n        <weui-cell title=\"消息通知\" [isLink]=\"true\" value=\"\"></weui-cell>\n        <weui-cell title=\"隐私设置\" [isLink]=\"true\" value=\"\"></weui-cell>\n        <weui-cell title=\"通用设置\" [isLink]=\"true\" value=\"\"></weui-cell>\n      </div>\n      \n      <div class=\"weui-cells\" style=\"margin-top: 12px;\">\n        <weui-cell title=\"关于我们\" [isLink]=\"true\" value=\"\"></weui-cell>\n        <weui-cell title=\"帮助与反馈\" [isLink]=\"true\" value=\"\"></weui-cell>\n        <weui-cell title=\"退出登录\" [isLink]=\"true\" value=\"\" (click)=\"showToast('info', '退出登录')\"></weui-cell>\n      </div>\n    </div>\n  </div>\n\n  <!-- 底部页脚 -->\n  <weui-footer [text]=\"'Angular WeUI v1.0.0'\"></weui-footer>\n</div>\n\n<!-- Toast 提示 -->\n<weui-toast \n  [visible]=\"toastVisible\" \n  [message]=\"toastMessage\" \n  [type]=\"toastType\"\n  (close)=\"hideToast()\">\n</weui-toast>\n\n<!-- 对话框 -->\n<weui-dialog \n  [visible]=\"dialogVisible\"\n  title=\"提示\"\n  content=\"这是一个对话框示例，展示 Angular WeUI 组件库的对话框功能。\"\n  confirmText=\"确定\"\n  cancelText=\"取消\"\n  (confirm)=\"handleDialogConfirm()\"\n  (cancel)=\"handleDialogCancel()\">\n</weui-dialog>\n\n<!-- 警告框 -->\n<weui-dialog \n  [visible]=\"alertVisible\"\n  title=\"警告\"\n  content=\"这是一个警告对话框，请注意相关操作。\"\n  [showCancelButton]=\"false\"\n  confirmText=\"我知道了\"\n  confirmButtonType=\"warn\"\n  (confirm)=\"handleAlertConfirm()\">\n</weui-dialog>\n\n<!-- 确认框 -->\n<weui-dialog \n  [visible]=\"confirmVisible\"\n  type=\"confirm\"\n  title=\"确认删除\"\n  content=\"确定要删除这个项目吗？此操作无法撤销。\"\n  confirmText=\"删除\"\n  cancelText=\"取消\"\n  confirmButtonType=\"warn\"\n  (confirm)=\"handleConfirmOk()\"\n  (cancel)=\"handleConfirmCancel()\">\n</weui-dialog>\n\n<!-- 操作表 -->\n<weui-actionsheet \n  [visible]=\"actionSheetVisible\"\n  [actions]=\"actions\"\n  title=\"请选择操作\"\n  cancelText=\"取消\"\n  (select)=\"handleActionSelect($event.item, $event.index)\"\n  (cancel)=\"handleActionCancel()\">\n</weui-actionsheet>\n\n<!-- 图库 -->\n<weui-gallery \n  [images]=\"galleryImages\"\n  [visible]=\"galleryVisible\"\n  [index]=\"galleryIndex\"\n  [showInfo]=\"true\"\n  [showDelete]=\"true\"\n  (visibleChange)=\"galleryVisible = $event\"\n  (indexChange)=\"galleryIndex = $event\">\n</weui-gallery>\n\n<!-- 选择器 -->\n<weui-picker\n  [visible]=\"pickerVisible\"\n  [columns]=\"cityColumns\"\n  title=\"请选择城市\"\n  (confirm)=\"handlePickerConfirm($event)\"\n  (cancel)=\"handlePickerCancel()\">\n</weui-picker>\n\n<!-- 日期选择器 -->\n<weui-picker\n  [(visible)]=\"dateVisible\"\n  [columns]=\"dateColumns\"\n  [defaultIndexes]=\"selectedDateIndexes\"\n  title=\"选择日期\"\n  (confirm)=\"handleDateConfirm($event)\"\n  (change)=\"handleDateChange($event)\"\n  (cancel)=\"dateVisible = false\">\n</weui-picker>\n\n<!-- 标签栏 -->\n<weui-tabbar \n  [items]=\"tabbarItems\"\n  [(activeIndex)]=\"activeTabIndex\"\n  (change)=\"handleTabChange($event)\">\n</weui-tabbar>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 66,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 75,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 72,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: inherit;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #357a14;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideRouter([]),\r\n    provideAnimations(),\r\n    provideHttpClient()\r\n  ]\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideRouter([]),\r\n    provideAnimations(),\r\n    provideHttpClient()\r\n  ]\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 11,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/demo.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/76",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+<div class="weui-tabbar" [class]="tabbarClasses" [style.z-index]="zIndex">
+  <div 
+    class="weui-tabbar__item"
+    [class]="getItemClasses(item, index)"
+    *ngFor="let item of items; let i = index; trackBy: trackByItem"
+    (click)="handleItemClick(item, i)"
+  >
+    <div class="weui-tabbar__icon">
+      <img 
+        *ngIf="item.icon && item.activeIcon"
+        [src]="activeIndex === i ? item.activeIcon : item.icon"
+        [alt]="item.text"
+        class="weui-tabbar__icon-img"
+      />
+      <i 
+        *ngIf="item.icon && !item.activeIcon"
+        class="weui-tabbar__icon-font"
+        [class]="item.icon"
+      ></i>
+    </div>
+    
+    <span class="weui-tabbar__text">{{ item.text }}</span>
+    
+    <div *ngIf="item.badge" class="weui-tabbar__badge">
+      {{ formatBadge(item.badge) }}
+    </div>
+  </div>
+</div>

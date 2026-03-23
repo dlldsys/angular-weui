@@ -1,0 +1,148 @@
+// WeUI Theme Entry Point
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// 动画定义
+@keyframes weuiFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes weuiFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes weuiSlideUp {
+  from { 
+    transform: translate(-50%, -40%);
+    opacity: 0;
+  }
+  to { 
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes weuiSlideDown {
+  from { 
+    transform: translate(-50%, -60%);
+    opacity: 0;
+  }
+  to { 
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+// 基础样式重置
+.weui-reset {
+  box-sizing: border-box;
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+// 通用工具类
+.weui-text-primary { color: var(--weui-primary-color); }
+.weui-text-success { color: var(--weui-success-color); }
+.weui-text-warning { color: var(--weui-warning-color); }
+.weui-text-error { color: var(--weui-error-color); }
+.weui-text-info { color: var(--weui-info-color); }
+
+.weui-bg-primary { background-color: var(--weui-primary-color); }
+.weui-bg-success { background-color: var(--weui-success-color); }
+.weui-bg-warning { background-color: var(--weui-warning-color); }
+.weui-bg-error { background-color: var(--weui-error-color); }
+.weui-bg-info { background-color: var(--weui-info-color); }
+
+.weui-border { border: 1px solid var(--weui-border-color); }
+.weui-border-top { border-top: 1px solid var(--weui-border-color); }
+.weui-border-bottom { border-bottom: 1px solid var(--weui-border-color); }
+.weui-border-left { border-left: 1px solid var(--weui-border-color); }
+.weui-border-right { border-right: 1px solid var(--weui-border-color); }
+
+// 间距工具类
+@each $size in (xs, sm, md, lg, xl) {
+  $value: var(--weui-spacing-#{$size});
+  
+  .weui-m-#{$size} { margin: $value; }
+  .weui-mt-#{$size} { margin-top: $value; }
+  .weui-mr-#{$size} { margin-right: $value; }
+  .weui-mb-#{$size} { margin-bottom: $value; }
+  .weui-ml-#{$size} { margin-left: $value; }
+  .weui-mx-#{$size} { margin-left: $value; margin-right: $value; }
+  .weui-my-#{$size} { margin-top: $value; margin-bottom: $value; }
+  
+  .weui-p-#{$size} { padding: $value; }
+  .weui-pt-#{$size} { padding-top: $value; }
+  .weui-pr-#{$size} { padding-right: $value; }
+  .weui-pb-#{$size} { padding-bottom: $value; }
+  .weui-pl-#{$size} { padding-left: $value; }
+  .weui-px-#{$size} { padding-left: $value; padding-right: $value; }
+  .weui-py-#{$size} { padding-top: $value; padding-bottom: $value; }
+}
+
+// 文本工具类
+.weui-text-left { text-align: left; }
+.weui-text-center { text-align: center; }
+.weui-text-right { text-align: right; }
+
+.weui-text-xs { font-size: var(--weui-font-size-xs); }
+.weui-text-sm { font-size: var(--weui-font-size-sm); }
+.weui-text-md { font-size: var(--weui-font-size-md); }
+.weui-text-lg { font-size: var(--weui-font-size-lg); }
+.weui-text-xl { font-size: var(--weui-font-size-xl); }
+.weui-text-xxl { font-size: var(--weui-font-size-xxl); }
+
+.weui-font-normal { font-weight: var(--weui-font-weight-normal); }
+.weui-font-medium { font-weight: var(--weui-font-weight-medium); }
+.weui-font-bold { font-weight: var(--weui-font-weight-bold); }
+
+// 布局工具类
+.weui-flex { display: flex; }
+.weui-inline-flex { display: inline-flex; }
+.weui-block { display: block; }
+.weui-inline-block { display: inline-block; }
+.weui-hidden { display: none; }
+.weui-visible { display: visible; }
+
+.weui-flex-row { flex-direction: row; }
+.weui-flex-column { flex-direction: column; }
+.weui-flex-wrap { flex-wrap: wrap; }
+.weui-flex-nowrap { flex-wrap: nowrap; }
+
+.weui-justify-start { justify-content: flex-start; }
+.weui-justify-center { justify-content: center; }
+.weui-justify-end { justify-content: flex-end; }
+.weui-justify-between { justify-content: space-between; }
+.weui-justify-around { justify-content: space-around; }
+
+.weui-items-start { align-items: flex-start; }
+.weui-items-center { align-items: center; }
+.weui-items-end { align-items: flex-end; }
+.weui-items-stretch { align-items: stretch; }
+
+.weui-flex-1 { flex: 1; }
+.weui-flex-auto { flex: auto; }
+.weui-flex-none { flex: none; }
+
+// 圆角工具类
+.weui-rounded-sm { border-radius: var(--weui-border-radius-sm); }
+.weui-rounded-md { border-radius: var(--weui-border-radius-md); }
+.weui-rounded-lg { border-radius: var(--weui-border-radius-lg); }
+.weui-rounded-xl { border-radius: var(--weui-border-radius-xl); }
+.weui-rounded-full { border-radius: 50%; }
+
+// 阴影工具类
+.weui-shadow-sm { box-shadow: var(--weui-shadow-sm); }
+.weui-shadow-md { box-shadow: var(--weui-shadow-md); }
+.weui-shadow-lg { box-shadow: var(--weui-shadow-lg); }
+
+// 文本省略
+.weui-ellipsis { @include text-ellipsis; }
+.weui-ellipsis-2 { @include text-ellipsis-multiline(2); }
+.weui-ellipsis-3 { @include text-ellipsis-multiline(3); }

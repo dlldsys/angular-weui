@@ -1,0 +1,215 @@
+@use '../../../theme/variables' as *;
+
+// ActionSheet 容器 (官方)
+.weui-actionsheet-wrapper {
+  display: block;
+}
+
+.weui-actionsheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5000;
+}
+
+// 遮罩层 (官方)
+.weui-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &.weui-mask--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// ActionSheet 容器 (官方)
+.weui-actionsheet__container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--weui-BG-2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+
+  &.weui-actionsheet__container--show {
+    transform: translateY(0);
+  }
+}
+
+// 菜单区域 (官方)
+.weui-actionsheet__menu {
+  background-color: var(--weui-BG-2);
+}
+
+// 操作区域
+.weui-actionsheet__action {
+  margin-top: 8px;
+  background-color: var(--weui-BG-2);
+}
+
+// ActionSheet 单元格 (官方)
+.weui-actionsheet__cell {
+  position: relative;
+  padding: 16px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--weui-FG-0);
+  background-color: var(--weui-BG-2);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+  }
+
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+
+  &:active {
+    background-color: var(--weui-BG-1);
+  }
+
+  // 警告类型
+  &.weui-actionsheet__cell--warn {
+    color: var(--weui-RED);
+  }
+
+  // 禁用状态
+  &.weui-actionsheet__cell--disabled {
+    color: var(--weui-FG-2);
+    cursor: not-allowed;
+
+    &:active {
+      background-color: var(--weui-BG-2);
+    }
+  }
+
+  // 加载状态
+  &.weui-actionsheet__cell--loading {
+    color: var(--weui-FG-1);
+    cursor: default;
+
+    &:active {
+      background-color: var(--weui-BG-2);
+    }
+  }
+
+  // 取消按钮
+  &.weui-actionsheet__cell--cancel {
+    font-weight: 500;
+    margin-top: 8px;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// ActionSheet 图标
+.weui-actionsheet__icon {
+  margin-right: 8px;
+  font-size: 20px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ActionSheet 文本
+.weui-actionsheet__text {
+  flex: 1;
+  text-align: center;
+}
+
+// ActionSheet 加载动画
+.weui-actionsheet__loading {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--weui-FG-1);
+  border-radius: 50%;
+  animation: weui-actionsheet-loading-rotate 1s linear infinite;
+}
+
+// 加载动画
+@keyframes weui-actionsheet-loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 动画效果
+@keyframes weui-actionsheet-slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes weui-actionsheet-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.weui-mask {
+  animation: weui-actionsheet-fade-in 0.3s ease;
+}
+
+.weui-actionsheet__container {
+  animation: weui-actionsheet-slide-up 0.3s ease;
+}
+
+// 响应式设计
+@media (max-width: 480px) {
+  .weui-actionsheet__cell {
+    padding: 16px;
+    font-size: 17px;
+    min-height: 56px;
+    box-sizing: border-box;
+  }
+
+  .weui-actionsheet__icon {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  .weui-actionsheet__loading {
+    width: 16px;
+    height: 16px;
+  }
+}

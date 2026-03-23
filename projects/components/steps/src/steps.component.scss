@@ -1,0 +1,204 @@
+@use '../../../theme/variables' as *;
+
+// Steps 容器
+.weui-steps {
+  display: flex;
+  width: 100%;
+
+  // 横向步骤条
+  &.weui-steps--vertical {
+    flex-direction: column;
+    
+    .weui-step {
+      flex-direction: row;
+      align-items: flex-start;
+      
+      &::before {
+        display: none;
+      }
+      
+      &::after {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 28px;
+        bottom: -12px;
+        width: 1px;
+        background-color: var(--weui-FG-3);
+      }
+      
+      &.weui-step--last::after {
+        display: none;
+      }
+    }
+    
+    .weui-step__content {
+      flex: 1;
+      padding-left: 8px;
+    }
+    
+    .weui-step__icon {
+      flex-shrink: 0;
+    }
+  }
+}
+
+// 单个步骤
+.weui-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    right: -50%;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+    z-index: 1;
+  }
+  
+  &.weui-step--last {
+    flex: 0;
+    
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// 步骤图标容器
+.weui-step__icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--weui-BG-2);
+  border-radius: 50%;
+}
+
+// 步骤图标-圆点
+.weui-step__icon-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--weui-FG-3);
+  border-radius: 50%;
+}
+
+// 步骤图标-数字
+.weui-step__icon-inner {
+  font-size: 12px;
+  color: var(--weui-BG-2);
+  font-weight: 500;
+}
+
+// 步骤图标-勾选
+.weui-step__icon-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+// 步骤内容
+.weui-step__content {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.weui-step__title {
+  font-size: 14px;
+  color: var(--weui-FG-1);
+  line-height: 1.4;
+}
+
+.weui-step__desc {
+  font-size: 12px;
+  color: var(--weui-FG-2);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+// 状态 - 等待
+.weui-step--wait {
+  .weui-step__icon {
+    border: 1px solid var(--weui-FG-3);
+  }
+  
+  .weui-step__icon-dot {
+    background-color: var(--weui-FG-3);
+  }
+  
+  &::before {
+    background-color: var(--weui-FG-3);
+  }
+}
+
+// 状态 - 进行中
+.weui-step--process {
+  .weui-step__icon {
+    background-color: var(--weui-BRAND);
+    border: none;
+  }
+  
+  .weui-step__icon-inner {
+    color: var(--weui-BG-2);
+  }
+  
+  .weui-step__title {
+    color: var(--weui-BRAND);
+    font-weight: 500;
+  }
+}
+
+// 状态 - 完成
+.weui-step--finish {
+  .weui-step__icon {
+    background-color: var(--weui-BRAND);
+    border: none;
+  }
+  
+  .weui-step__icon-check {
+    color: var(--weui-BG-2);
+  }
+  
+  &::before {
+    background-color: var(--weui-BRAND);
+  }
+  
+  .weui-step__title {
+    color: var(--weui-BRAND);
+  }
+}
+
+// 状态 - 错误
+.weui-step--error {
+  .weui-step__icon {
+    background-color: var(--weui-RED);
+    border: none;
+  }
+  
+  .weui-step__icon-inner {
+    color: var(--weui-BG-2);
+    font-weight: 600;
+  }
+  
+  &::before {
+    background-color: var(--weui-RED);
+  }
+  
+  .weui-step__title {
+    color: var(--weui-RED);
+  }
+}

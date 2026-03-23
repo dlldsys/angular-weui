@@ -1,0 +1,23 @@
+<div [ngClass]="progressClass">
+  <!-- 进度条轨道 -->
+  <div class="weui-progress__bar">
+    <!-- 进度条填充 -->
+    <div 
+      class="weui-progress__inner-bar" 
+      [style.width.%]="indeterminate ? 30 : percentage"
+      [style.background-color]="color || null"
+    ></div>
+  </div>
+
+  <!-- 进度文本 -->
+  <span 
+    *ngIf="showText" 
+    class="weui-progress__text">
+    {{ displayText }}
+  </span>
+
+  <!-- 操作按钮插槽 -->
+  <span class="weui-progress__opr">
+    <ng-content></ng-content>
+  </span>
+</div>

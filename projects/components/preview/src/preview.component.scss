@@ -1,0 +1,156 @@
+@use '../../../theme/variables' as *;
+
+// Preview 包装器
+.weui-preview-wrapper {
+  display: block;
+}
+
+// Preview 基础样式
+.weui-preview {
+  background-color: var(--weui-BG-2);
+  overflow: hidden;
+}
+
+// Preview 头部
+.weui-preview__hd {
+  display: flex;
+  align-items: center;
+  padding: var(--weui-spacing-md);
+  border-bottom: 1px solid var(--weui-DIALOG-LINE-COLOR);
+}
+
+.weui-preview__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.weui-preview__title {
+  font-size: var(--weui-font-size-md);
+  color: var(--weui-FG-0);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.weui-preview__subtitle {
+  font-size: var(--weui-font-size-sm);
+  color: var(--weui-FG-1);
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+.weui-preview__value {
+  font-size: var(--weui-font-size-md);
+  color: var(--weui-FG-0);
+
+  a {
+    color: var(--weui-LINK_COLOR);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:active {
+      color: var(--weui-LINK_COLOR_ACTIVE);
+    }
+  }
+}
+
+.weui-preview__value_bold {
+  font-weight: 600;
+}
+
+// Preview 内容
+.weui-preview__bd {
+  padding: var(--weui-spacing-md);
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+// Preview 项目
+.weui-preview__item {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--weui-DIALOG-LINE-COLOR);
+  }
+}
+
+.weui-preview__label {
+  flex-shrink: 0;
+  width: 100px;
+  font-size: var(--weui-font-size-sm);
+  color: var(--weui-FG-1);
+  margin-right: var(--weui-spacing-sm);
+}
+
+// Preview 底部
+.weui-preview__ft {
+  display: flex;
+  border-top: 1px solid var(--weui-DIALOG-LINE-COLOR);
+
+  // 自定义内容插槽
+  &:has(ng-content) {
+    flex-direction: column;
+
+    .weui-preview__btn {
+      &::before {
+        display: none;
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: var(--weui-DIALOG-LINE-COLOR);
+      }
+    }
+  }
+}
+
+.weui-preview__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 8px;
+  font-size: var(--weui-font-size-md);
+  color: var(--weui-BRAND);
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--weui-BG-2);
+  box-sizing: border-box;
+
+  &:active {
+    background-color: var(--weui-BG-COLOR-ACTIVE);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--weui-DIALOG-LINE-COLOR);
+  }
+
+  &:first-child::before {
+    display: none;
+  }
+}
+
+.weui-preview__btn_default {
+  color: var(--weui-FG-0);
+}
+
+.weui-preview__btn_primary {
+  color: var(--weui-BRAND);
+}

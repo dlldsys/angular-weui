@@ -1,0 +1,29 @@
+<article class="weui-article">
+  <!-- 文章头部 -->
+  <header class="weui-article__header" *ngIf="headerTemplate || title || subtitle || author || time">
+    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+    
+    <ng-container *ngIf="!headerTemplate">
+      <h1 class="weui-article__title" *ngIf="title">{{ title }}</h1>
+      <h2 class="weui-article__subtitle" *ngIf="subtitle">{{ subtitle }}</h2>
+      <div class="weui-article__meta" *ngIf="author || time">
+        <span class="weui-article__author" *ngIf="author">{{ author }}</span>
+        <span class="weui-article__time" *ngIf="time">{{ time }}</span>
+      </div>
+    </ng-container>
+  </header>
+
+  <!-- 文章内容 -->
+  <section class="weui-article__content">
+    <ng-container *ngTemplateOutlet="contentTemplate || defaultContent"></ng-container>
+    
+    <ng-template #defaultContent>
+      <ng-content></ng-content>
+    </ng-template>
+  </section>
+
+  <!-- 文章底部 -->
+  <footer class="weui-article__footer" *ngIf="footerTemplate">
+    <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+  </footer>
+</article>

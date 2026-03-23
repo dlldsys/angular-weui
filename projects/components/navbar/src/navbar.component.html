@@ -1,0 +1,36 @@
+<div class="weui-navbar" [class]="navbarClasses" [style.z-index]="zIndex">
+  <div class="weui-navbar__left">
+    <ng-container *ngIf="leftTemplate; else defaultLeft">
+      <ng-container [ngTemplateOutlet]="leftTemplate"></ng-container>
+    </ng-container>
+    <ng-template #defaultLeft>
+      <button 
+        *ngIf="showBack"
+        class="weui-navbar__back"
+        (click)="handleBack()"
+        aria-label="返回"
+      >
+        <i class="weui-navbar__back-icon"></i>
+        <span *ngIf="backText" class="weui-navbar__back-text">{{ backText }}</span>
+      </button>
+    </ng-template>
+  </div>
+  
+  <div class="weui-navbar__title">
+    <ng-container *ngIf="titleTemplate; else defaultTitle">
+      <ng-container [ngTemplateOutlet]="titleTemplate"></ng-container>
+    </ng-container>
+    <ng-template #defaultTitle>
+      <span class="weui-navbar__title-text">{{ title }}</span>
+    </ng-template>
+  </div>
+  
+  <div class="weui-navbar__right">
+    <ng-container *ngIf="rightTemplate; else defaultRight">
+      <ng-container [ngTemplateOutlet]="rightTemplate"></ng-container>
+    </ng-container>
+    <ng-template #defaultRight>
+      <ng-content select="[weui-navbar-right]"></ng-content>
+    </ng-template>
+  </div>
+</div>

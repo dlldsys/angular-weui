@@ -1,0 +1,300 @@
+/* WeUI Angular - Global Styles */
+
+/* 官方 WeUI 样式变量覆盖 */
+:root {
+  /* 官方 WeUI 字体变量 */
+  --weui-font-size-xs: 10px;
+  --weui-font-size-sm: 12px;
+  --weui-font-size-md: 17px;
+  --weui-font-size-lg: 17px;
+  --weui-font-size-xl: 17px;
+  --weui-font-weight-bold: 500;
+
+  /* 官方 WeUI 颜色 */
+  --weui-primary-color: #07c160;
+  --weui-success-color: #07c160;
+  --weui-warning-color: #ff9500;
+  --weui-error-color: #fa5151;
+  --weui-info-color: #10aeff;
+
+  /* 官方 WeUI 文本颜色 */
+  --weui-text-color: #333333;
+  --weui-text-color-title: #000000;
+  --weui-text-color-desc: #666666;
+  --weui-text-color-tips: #999999;
+  --weui-text-color-disabled: #cccccc;
+  --weui-text-color-inverse: #ffffff;
+
+  /* 官方 WeUI 背景颜色 */
+  --weui-bg-color: #ffffff;
+  --weui-bg-color-page: #f5f5f5;
+  --weui-bg-color-active: #ececec;
+  --weui-bg-color-disabled: #e5e5e5;
+
+  /* 官方 WeUI 边框颜色 */
+  --weui-border-color: #e5e5e5;
+  --weui-border-color-split: #e0e0e0;
+
+  /* 官方 WeUI 间距 */
+  --weui-spacing-xs: 4px;
+  --weui-spacing-sm: 8px;
+  --weui-spacing-md: 16px;
+  --weui-spacing-lg: 24px;
+  --weui-spacing-xl: 32px;
+
+  /* 官方 WeUI 圆角 */
+  --weui-border-radius-sm: 4px;
+  --weui-border-radius-md: 8px;
+  --weui-border-radius-lg: 12px;
+  --weui-border-radius-xl: 16px;
+
+  /* 组件高度变量 (官方) */
+  --weui-BTN-HEIGHT: 48px;
+  --weui-BTN-HEIGHT-MEDIUM: 40px;
+  --weui-BTN-HEIGHT-SMALL: 32px;
+  --weui-NAV-HEIGHT: 45px;
+  --weui-TABBAR-HEIGHT: 50px;
+  --weui-CELL-HEIGHT: 56px;
+  --weui-INPUT-HEIGHT: 45px;
+
+  /* 官方阴影 */
+  --weui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --weui-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --weui-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark theme - data attribute */
+:root[data-theme="dark"] {
+  --weui-text-color: #ffffff;
+  --weui-text-color-title: #ffffff;
+  --weui-text-color-desc: #b2b2b2;
+  --weui-text-color-tips: #808080;
+  --weui-text-color-disabled: #4d4d4d;
+  --weui-text-color-inverse: #000000;
+
+  --weui-bg-color: #1f1f1f;
+  --weui-bg-color-page: #121212;
+  --weui-bg-color-active: #2d2d2d;
+  --weui-bg-color-disabled: #333333;
+
+  --weui-border-color: #3d3d3d;
+  --weui-border-color-split: #333333;
+}
+
+/* Dark theme - system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --weui-text-color: #ffffff;
+    --weui-text-color-title: #ffffff;
+    --weui-text-color-desc: #b2b2b2;
+    --weui-text-color-tips: #808080;
+    --weui-text-color-disabled: #4d4d4d;
+    --weui-text-color-inverse: #000000;
+
+    --weui-bg-color: #1f1f1f;
+    --weui-bg-color-page: #121212;
+    --weui-bg-color-active: #2d2d2d;
+    --weui-bg-color-disabled: #333333;
+
+    --weui-border-color: #3d3d3d;
+    --weui-border-color-split: #333333;
+  }
+}
+
+/* 重置样式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--weui-font-size-md);
+  line-height: 1.5;
+  color: var(--weui-text-color);
+  background-color: var(--weui-bg-color-page);
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 移动端适配 */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 移除点击高亮 */
+a, button, input, textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 图片 */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 链接 */
+a {
+  color: var(--weui-primary-color);
+  text-decoration: none;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox 滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* 禁用选择 */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 安全区域适配 */
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-inset-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Flex 工具类 */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 文本工具类 */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--weui-primary-color);
+}
+
+.text-muted {
+  color: var(--weui-text-color-tips);
+}
+
+/* 间距工具类 */
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.p-16 { padding: 16px; }
+.px-16 { padding-left: 16px; padding-right: 16px; }
+.py-16 { padding-top: 16px; padding-bottom: 16px; }
+
+/* 动画 */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* WeUI 图标动画 */
+.weui-icon--spin {
+  animation: spin 1s linear infinite;
+}
+
+/* 列表项样式 */
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--weui-border-color);
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .list-label {
+    flex: 1;
+    color: var(--weui-text-color);
+  }
+  
+  .list-value {
+    color: var(--weui-text-color-desc);
+    margin-right: 8px;
+  }
+  
+  .list-arrow {
+    color: var(--weui-text-color-tips);
+  }
+}

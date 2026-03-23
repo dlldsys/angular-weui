@@ -1,0 +1,124 @@
+@use '../../../theme/variables' as *;
+
+// Icon 基础样式 (官方)
+.weui-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--weui-GLYPH-0);
+
+  // 尺寸变体
+  &.weui-icon--small {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+  }
+
+  &.weui-icon--normal {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.weui-icon--large {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  // 旋转动画
+  &.weui-icon--spin {
+    animation: weui-icon-spin 1s linear infinite;
+  }
+
+  // 特定图标颜色
+  &.weui-icon--success {
+    color: var(--weui-BRAND);
+  }
+
+  &.weui-icon--warning {
+    color: var(--weui-YELLOW);
+  }
+
+  &.weui-icon--error {
+    color: var(--weui-RED);
+  }
+
+  &.weui-icon--info {
+    color: var(--weui-BLUE);
+  }
+
+  // SVG样式
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  // 自定义图标内容样式
+  &:not(:has(svg)) {
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+  }
+}
+
+// Icon 箭头
+.weui-icon-arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid var(--weui-FG-2);
+  border-right: 1px solid var(--weui-FG-2);
+  transform: rotate(45deg);
+}
+
+// Icon 成功
+.weui-icon-success {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 20px;
+  color: var(--weui-BRAND);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
+// Icon 加载中
+.weui-icon-loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: 20px;
+  animation: weui-icon-spin 1s linear infinite;
+  color: var(--weui-FG-1);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
+// 动画
+@keyframes weui-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

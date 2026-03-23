@@ -1,0 +1,105 @@
+@use '../../../theme/variables' as *;
+
+// Flex 包装器
+.weui-flex-wrapper {
+  display: block;
+}
+
+// Flex 容器
+.weui-flex {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// 方向
+.weui-flex__dir_column {
+  flex-direction: column;
+}
+
+.weui-flex__dir_row-reverse {
+  flex-direction: row-reverse;
+}
+
+.weui-flex__dir_column-reverse {
+  flex-direction: column-reverse;
+}
+
+// 换行
+.weui-flex__wrap_wrap {
+  flex-wrap: wrap;
+}
+
+.weui-flex__wrap_wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// 主轴对齐 (justify-content)
+.weui-flex__justify_start {
+  justify-content: flex-start;
+}
+
+.weui-flex__justify_end {
+  justify-content: flex-end;
+}
+
+.weui-flex__justify_center {
+  justify-content: center;
+}
+
+.weui-flex__justify_between {
+  justify-content: space-between;
+}
+
+.weui-flex__justify_around {
+  justify-content: space-around;
+}
+
+.weui-flex__justify_evenly {
+  justify-content: space-evenly;
+}
+
+// 交叉轴对齐 (align-items)
+.weui-flex__align_top {
+  align-items: flex-start;
+}
+
+.weui-flex__align_bottom {
+  align-items: flex-end;
+}
+
+.weui-flex__align_center {
+  align-items: center;
+}
+
+.weui-flex__align_baseline {
+  align-items: baseline;
+}
+
+.weui-flex__align_stretch {
+  align-items: stretch;
+}
+
+// Flex 项目
+.weui-flex__item {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+// 间距 (gap)
+.weui-flex__gap_xs {
+  gap: var(--weui-spacing-xs);
+}
+
+.weui-flex__gap_sm {
+  gap: var(--weui-spacing-sm);
+}
+
+.weui-flex__gap_md {
+  gap: var(--weui-spacing-md);
+}
+
+.weui-flex__gap_lg {
+  gap: var(--weui-spacing-lg);
+}

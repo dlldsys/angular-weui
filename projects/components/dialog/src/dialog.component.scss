@@ -1,0 +1,279 @@
+@use '../../../theme/variables' as *;
+
+// Dialog 遮罩层 (官方)
+.weui-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// Dialog 主样式 (官方)
+.weui-dialog {
+  position: fixed;
+  z-index: 5000;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  transform: translate(0, -50%);
+  background-color: var(--weui-BG-2);
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  outline: 0;
+
+  // 大小
+  &.weui-dialog--small {
+    max-width: 280px;
+  }
+
+  &.weui-dialog--large {
+    max-width: 360px;
+  }
+}
+
+// Dialog 标题区域
+.weui-dialog__hd {
+  padding: 32px 24px 16px;
+}
+
+.weui-dialog__title {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--weui-FG-0);
+}
+
+// Dialog 内容区域
+.weui-dialog__bd {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 24px;
+  margin-bottom: 32px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--weui-FG-DESC);
+
+  &:first-child {
+    min-height: 40px;
+    padding: 32px 24px 0;
+    font-weight: 500;
+    color: var(--weui-FG-0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+// Dialog 按钮区域
+.weui-dialog__ft {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden; // 兼容小程序旁白点击无效
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-DIALOG-LINE-COLOR);
+    transform: scaleY(0.5);
+  }
+}
+
+// Dialog 按钮 (官方样式)
+.weui-dialog__btn {
+  flex: 1;
+  display: block;
+  line-height: 1.41; // (64-40)/17 ≈ 1.41
+  padding: 20px 8px;
+  font-size: 17px;
+  color: var(--weui-LINK_COLOR);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden; // 兼容小程序旁白点击无效
+
+  &:active {
+    background-color: var(--weui-BG-COLOR-ACTIVE);
+  }
+
+  // 左右分隔线 (左侧边框)
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background-color: var(--weui-DIALOG-LINE-COLOR);
+    transform: scaleX(0.5);
+  }
+
+  // 第一个按钮不显示左侧分隔线
+  &:first-child {
+    &::after {
+      display: none;
+    }
+  }
+
+  // 按钮类型
+  &.weui-dialog__btn_default {
+    color: var(--weui-FG-HALF);
+  }
+
+  &.weui-dialog__btn_warn {
+    color: var(--weui-RED);
+  }
+
+  &.weui-dialog__btn_primary {
+    color: var(--weui-LINK_COLOR);
+  }
+
+  &.weui-dialog__btn_disabled {
+    color: var(--weui-FG-2);
+    pointer-events: none;
+  }
+}
+
+// Dialog 垂直按钮组 (用于按钮垂直排列)
+.weui-dialog_btn-wrap {
+  .weui-dialog__ft {
+    flex-direction: column;
+    align-items: initial;
+  }
+
+  .weui-dialog__btn {
+    &::after {
+      width: auto;
+      bottom: auto;
+      right: 0;
+      height: 1px;
+      transform: scaleY(0.5);
+      background-color: var(--weui-DIALOG-LINE-COLOR);
+      border-top: 1px solid var(--weui-DIALOG-LINE-COLOR);
+      border-left: none;
+    }
+
+    &:first-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+// Dialog 关闭按钮
+.weui-dialog__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--weui-FG-1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 1;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background-color: var(--weui-FG-5);
+  }
+
+  &:active {
+    background-color: var(--weui-FG-3);
+  }
+}
+
+// Android 皮肤
+.weui-skin_android {
+  .weui-dialog {
+    text-align: left;
+    box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .weui-dialog__title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .weui-dialog__hd {
+    text-align: left;
+  }
+
+  .weui-dialog__bd {
+    color: var(--weui-FG-DESC);
+    text-align: left;
+
+    &:first-child {
+      color: var(--weui-FG-0);
+    }
+  }
+
+  .weui-dialog__ft {
+    display: block;
+    text-align: right;
+    line-height: 40px;
+    min-height: 40px;
+    padding: 0 24px 16px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .weui-dialog__btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0.8em;
+
+    &::after {
+      display: none;
+    }
+
+    &:last-child {
+      margin-right: -0.8em;
+    }
+  }
+}
+
+// 响应式设计 (官方)
+@media (min-width: 352px) {
+  .weui-dialog {
+    width: 320px;
+    margin: 0 auto;
+  }
+}

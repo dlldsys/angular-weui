@@ -1,0 +1,57 @@
+@use '../../../theme/variables' as *;
+
+// Footer 包装器
+.weui-footer-wrapper {
+  display: block;
+}
+
+// Footer 基础样式
+.weui-footer {
+  padding: var(--weui-spacing-lg) var(--weui-spacing-md);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+// 固定在底部
+.weui-footer_fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--weui-BG-2);
+  padding: var(--weui-spacing-md);
+  z-index: var(--weui-z-index-fixed);
+}
+
+// Footer 文字
+.weui-footer__text {
+  font-size: var(--weui-font-size-sm);
+  color: var(--weui-FG-1);
+  line-height: 1.4;
+}
+
+// Footer 链接容器
+.weui-footer__links {
+  margin-bottom: var(--weui-spacing-sm);
+}
+
+// Footer 链接
+.weui-footer__link {
+  display: inline;
+  font-size: var(--weui-font-size-sm);
+  color: var(--weui-LINK_COLOR);
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    color: var(--weui-LINK_COLOR_ACTIVE);
+  }
+}
+
+// Footer 分隔符
+.weui-footer__split {
+  display: inline-block;
+  margin: 0 var(--weui-spacing-sm);
+  color: var(--weui-FG-2);
+}

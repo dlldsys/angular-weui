@@ -1,0 +1,33 @@
+@use '../../../theme/variables' as *;
+
+// WeUI官方grid样式
+.weui-grids {
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid var(--weui-FG-5, #e5e5e5);
+    color: var(--weui-FG-5, #e5e5e5);
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+  }
+
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-left: 1px solid var(--weui-FG-5, #e5e5e5);
+    color: var(--weui-FG-5, #e5e5e5);
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
+  }
+}

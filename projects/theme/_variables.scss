@@ -1,0 +1,137 @@
+// WeUI Angular Theme Variables
+// Reference: https://github.com/weui/weui
+
+@use 'sass:color';
+
+// 官方 WeUI 颜色系统
+:root {
+  // Brand Colors
+  --weui-BRAND: #07c160;
+  --weui-BLUE: #10aeff;
+  --weui-RED: #fa5151;
+  --weui-ORANGE: #fa9d3b;
+  --weui-YELLOW: #ffc300;
+  --weui-GREEN: #91d300;
+  --weui-LIGHTGREEN: #95ec69;
+
+  // Link
+  --weui-LINK: #576b95;
+
+  // Background
+  --weui-BG-0: #ededed;
+  --weui-BG-1: #f7f7f7;
+  --weui-BG-2: #fff;
+  --weui-BG-3: #f7f7f7;
+
+  // Text Colors
+  --weui-FG-0: rgba(0, 0, 0, 0.9);
+  --weui-FG-1: rgba(0, 0, 0, 0.55);
+  --weui-FG-2: rgba(0, 0, 0, 0.3);
+  --weui-FG-3: rgba(0, 0, 0, 0.1);
+  --weui-FG-HALF: rgba(0, 0, 0, 0.5);
+  --weui-FG-DESC: rgba(0, 0, 0, 0.4);
+
+  // Link Colors
+  --weui-LINK_COLOR: #576b95;
+  --weui-LINK_COLOR_ACTIVE: rgba(0, 0, 0, 0.6);
+
+  // Glyph (Icon) Colors
+  --weui-GLYPH-0: rgba(0, 0, 0, 0.9);
+  --weui-GLYPH-1: rgba(0, 0, 0, 0.55);
+  --weui-GLYPH-2: rgba(0, 0, 0, 0.3);
+
+  // 兼容性别名
+  --weui-primary-color: var(--weui-BRAND);
+  --weui-bg-color: var(--weui-BG-2);
+  --weui-text-color: var(--weui-FG-0);
+  --weui-border-color: rgba(0, 0, 0, 0.1);
+  --weui-link-color: var(--weui-LINK);
+
+  // 状态颜色
+  --weui-success-color: var(--weui-BRAND);
+  --weui-warning-color: var(--weui-YELLOW);
+  --weui-error-color: var(--weui-RED);
+  --weui-info-color: var(--weui-BLUE);
+
+  // 字体大小 (官方: md/lg 都是 17px)
+  --weui-font-size-xs: 10px;
+  --weui-font-size-sm: 12px;
+  --weui-font-size-md: 17px;
+  --weui-font-size-lg: 17px;
+  --weui-font-size-xl: 17px;
+
+  // 组件高度 (官方)
+  --weui-BTN-HEIGHT: 48px;
+  --weui-BTN-HEIGHT-MEDIUM: 40px;
+  --weui-BTN-HEIGHT-SMALL: 32px;
+  --weui-NAV-HEIGHT: 45px;
+  --weui-TABBAR-HEIGHT: 50px;
+  --weui-CELL-HEIGHT: 56px;
+  --weui-INPUT-HEIGHT: 45px;
+
+  // 间距
+  --weui-spacing-xs: 4px;
+  --weui-spacing-sm: 8px;
+  --weui-spacing-md: 16px;
+  --weui-spacing-lg: 24px;
+  --weui-spacing-xl: 32px;
+
+  // 圆角
+  --weui-border-radius-sm: 4px;
+  --weui-border-radius-md: 8px;
+  --weui-border-radius-lg: 12px;
+  --weui-border-radius-xl: 16px;
+
+  // 按钮变量
+  --weui-BTN-DEFAULT-ACTIVE-BG: rgba(0, 0, 0, 0.05);
+  --weui-BTN-ACTIVE-MASK: rgba(0, 0, 0, 0.2);
+  --weui-BG-COLOR-ACTIVE: rgba(0, 0, 0, 0.05);
+
+  // Dialog 变量
+  --weui-DIALOG-LINE-COLOR: rgba(0, 0, 0, 0.1);
+
+  // Z-index
+  --weui-z-index-dropdown: 1000;
+  --weui-z-index-sticky: 1020;
+  --weui-z-index-fixed: 1030;
+  --weui-z-index-modal-backdrop: 1040;
+  --weui-z-index-modal: 1050;
+  --weui-z-index-popover: 1060;
+  --weui-z-index-tooltip: 1070;
+}
+
+// Dark theme
+[data-weui-theme="dark"] {
+  --weui-BG-0: #1F1F1F;
+  --weui-BG-1: #2F2F2F;
+  --weui-BG-2: #1F1F1F;
+  --weui-BG-3: #2F2F2F;
+
+  --weui-FG-0: rgba(255, 255, 255, 0.9);
+  --weui-FG-1: rgba(255, 255, 255, 0.55);
+  --weui-FG-2: rgba(255, 255, 255, 0.3);
+  --weui-FG-3: rgba(255, 255, 255, 0.1);
+  --weui-FG-HALF: rgba(255, 255, 255, 0.5);
+  --weui-FG-DESC: rgba(255, 255, 255, 0.4);
+
+  --weui-GLYPH-0: rgba(255, 255, 255, 0.8);
+  --weui-GLYPH-1: rgba(255, 255, 255, 0.5);
+  --weui-GLYPH-2: rgba(255, 255, 255, 0.3);
+
+  --weui-LINK: #7AAFE8;
+  --weui-LINK_COLOR: #7AAFE8;
+  --weui-LINK_COLOR_ACTIVE: rgba(255, 255, 255, 0.6);
+
+  --weui-BTN-DEFAULT-ACTIVE-BG: rgba(255, 255, 255, 0.05);
+  --weui-BTN-ACTIVE-MASK: rgba(255, 255, 255, 0.2);
+  --weui-BG-COLOR-ACTIVE: rgba(255, 255, 255, 0.05);
+
+  // Dialog 变量
+  --weui-DIALOG-LINE-COLOR: rgba(255, 255, 255, 0.1);
+
+  // 兼容性别名
+  --weui-bg-color: var(--weui-BG-2);
+  --weui-text-color: var(--weui-FG-0);
+  --weui-border-color: rgba(255, 255, 255, 0.1);
+  --weui-link-color: var(--weui-LINK);
+}

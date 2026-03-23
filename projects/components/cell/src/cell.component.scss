@@ -1,0 +1,215 @@
+@use '../../../theme/variables' as *;
+
+.weui-cell-wrapper {
+  display: block;
+}
+
+// Cell 基础样式 (官方)
+.weui-cells {
+  margin-top: 8px;
+  background-color: var(--weui-BG-2);
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+    z-index: 2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+    z-index: 2;
+  }
+}
+
+.weui-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  background-color: var(--weui-BG-2);
+  font-size: 17px;
+  color: var(--weui-FG-0);
+  line-height: 1.4;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 16px;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+    z-index: 2;
+  }
+
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+
+  // 可点击状态
+  &.weui-cell--clickable {
+    cursor: pointer;
+
+    &:active {
+      background-color: var(--weui-BG-1);
+    }
+  }
+
+  // 禁用状态
+  &.weui-cell--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // 链接样式
+  &.weui-cell--link {
+    color: var(--weui-LINK);
+  }
+
+  // 主内容对齐
+  &.weui-cell_primary {
+    align-items: flex-start;
+  }
+}
+
+// Cell 内部元素
+.weui-cell__hd {
+  margin-right: 8px;
+  color: var(--weui-FG-1);
+
+  i {
+    font-size: 20px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+}
+
+.weui-cell__bd {
+  flex: 1;
+  min-width: 0;
+}
+
+.weui-cell__title {
+  font-size: 17px;
+  color: var(--weui-FG-0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.weui-cell__desc {
+  font-size: 12px;
+  color: var(--weui-FG-2);
+  line-height: 1.4;
+  padding-top: 4px;
+}
+
+.weui-cell__ft {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: var(--weui-FG-1);
+  font-size: 14px;
+
+  .weui-cell__value {
+    margin-right: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// Cell Access (带箭头)
+.weui-cell_access {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 6px;
+    height: 6px;
+    margin-top: -4px;
+    border: 1px solid var(--weui-FG-2);
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+}
+
+// 垂直对齐
+.weui-cell--align-middle {
+  align-items: center;
+}
+
+.weui-cell--align-top {
+  align-items: flex-start;
+}
+
+.weui-cell--align-bottom {
+  align-items: flex-end;
+}
+
+// 紧凑模式
+.weui-cell--compact {
+  padding: 8px 16px;
+}
+
+// 无边框
+.weui-cell--no-border {
+  border-bottom: none;
+
+  &::before {
+    display: none;
+  }
+}
+
+// Cells 标题
+.weui-cells__title {
+  margin-top: 16px;
+  margin-bottom: 3px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: var(--weui-FG-1);
+  font-size: 12px;
+  line-height: 1.4;
+
+  & + .weui-cells {
+    margin-top: 0;
+  }
+}
+
+// Cells 提示
+.weui-cells__tips {
+  margin-top: 8px;
+  color: var(--weui-FG-1);
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 12px;
+  line-height: 1.4;
+
+  a {
+    color: var(--weui-LINK);
+  }
+}

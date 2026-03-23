@@ -1,0 +1,671 @@
+<!-- 导航栏 -->
+<weui-navbar 
+  title="Angular WeUI 组件演示" 
+  [showBack]="false"
+  (back)="handleBack()">
+</weui-navbar>
+
+<div class="demo-container">
+  <!-- 组件导航 -->
+  <div class="component-nav">
+    <button 
+      *ngFor="let item of tabbarItems; let i = index"
+      class="nav-item"
+      [class.active]="activeTabIndex === i"
+      (click)="activeTabIndex = i; currentSection = item.id">
+      <span class="nav-icon">{{ item.icon }}</span>
+      <span class="nav-text">{{ item.text }}</span>
+    </button>
+  </div>
+
+  <!-- 首页 -->
+  <div *ngIf="currentSection === 'home'" class="demo-section">
+    <div class="section-header">
+      <h2>欢迎使用 Angular WeUI</h2>
+      <p>基于 WeUI 设计规范的 Angular 组件库</p>
+    </div>
+
+    <!-- 功能介绍 -->
+    <div class="feature-grid">
+      <div class="feature-card" (click)="showSection('components')">
+        <div class="feature-icon">📦</div>
+        <div class="feature-title">21+ 组件</div>
+        <div class="feature-desc">丰富的 UI 组件，满足各种业务场景</div>
+      </div>
+      <div class="feature-card" (click)="showSection('gallery')">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-title">微信风格</div>
+        <div class="feature-desc">与微信原生视觉体验一致</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">高性能</div>
+        <div class="feature-desc">基于 Angular 最新特性优化</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">易定制</div>
+        <div class="feature-desc">支持主题定制和 CSS 变量</div>
+      </div>
+    </div>
+
+    <!-- 快速开始 -->
+    <div class="quick-start">
+      <h3>快速开始</h3>
+      <pre class="code-block"><code>import {{ '{' }} WeUIButtonModule {{ '}' }} from 'angular-weui';
+
+@NgModule({{ '{' }}
+  imports: [WeUIButtonModule]
+{{ '}' }})
+export class AppModule {{ '{' }} {{ '}' }}</code></pre>
+    </div>
+
+    <!-- 最新活动 -->
+    <div class="activity-section">
+      <h3>最新活动</h3>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-content">
+            <div class="activity-title">WeUI 设计规范更新</div>
+            <div class="activity-desc">新增多个组件，优化视觉体验</div>
+          </div>
+          <span class="activity-badge">
+            <weui-badge value="NEW"></weui-badge>
+          </span>
+        </div>
+        <div class="activity-item">
+          <div class="activity-title">暗黑模式支持</div>
+          <div class="activity-desc">全面支持系统暗黑模式</div>
+          <span class="activity-badge">
+            <weui-badge value="HOT" status="warning"></weui-badge>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 步骤条 -->
+    <div class="demo-block">
+      <h3 class="block-title">操作步骤</h3>
+      <weui-steps [direction]="'horizontal'">
+        <weui-step title="选择组件" [status]="currentStep >= 1 ? (currentStep > 1 ? 'finish' : 'process') : 'wait'"></weui-step>
+        <weui-step title="查看演示" [status]="currentStep >= 2 ? (currentStep > 2 ? 'finish' : 'process') : 'wait'"></weui-step>
+        <weui-step title="集成使用" [status]="currentStep >= 3 ? (currentStep > 3 ? 'finish' : 'process') : 'wait'"></weui-step>
+        <weui-step title="完成" [status]="currentStep >= 4 ? 'finish' : 'wait'"></weui-step>
+      </weui-steps>
+      <div class="step-actions">
+        <weui-button buttonType="default" size="small" [disabled]="currentStep <= 1" (click)="prevStep()">上一步</weui-button>
+        <weui-button buttonType="primary" size="small" [disabled]="currentStep >= 4" (click)="nextStep()">下一步</weui-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 组件展示 -->
+  <div *ngIf="currentSection === 'components'" class="demo-section">
+    <!-- 按钮 -->
+    <div class="demo-block">
+      <h3 class="block-title">Button 按钮</h3>
+      <p class="block-desc">基础按钮组件，支持多种类型和状态</p>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary">主要按钮</weui-button>
+        <weui-button buttonType="default">默认按钮</weui-button>
+        <weui-button buttonType="warn">警告按钮</weui-button>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" size="small">小按钮</weui-button>
+        <weui-button buttonType="primary" size="normal">正常</weui-button>
+        <weui-button buttonType="primary" size="large">大按钮</weui-button>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" [plain]="true">朴素按钮</weui-button>
+        <weui-button buttonType="primary" [round]="true">圆角按钮</weui-button>
+        <weui-button buttonType="primary" [circle]="true">●</weui-button>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" [block]="true">块级按钮</weui-button>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" [loading]="isLoading" (click)="toggleLoading()">
+          {{ isLoading ? '加载中...' : '点击加载' }}
+        </weui-button>
+        <weui-button buttonType="default" [disabled]="true">禁用按钮</weui-button>
+        <weui-button buttonType="primary" (click)="handleButtonClick()">计数器: {{ buttonCount }}</weui-button>
+      </div>
+    </div>
+
+    <!-- 单元格 -->
+    <div class="demo-block">
+      <h3 class="block-title">Cell 单元格</h3>
+      <p class="block-desc">列表项组件，支持多种样式</p>
+      
+      <div class="weui-cells">
+        <weui-cell title="标题文字" value="值"></weui-cell>
+        <weui-cell title="带图标的单元格" value="图标">
+          <i slot="ft" class="weui-icon-success weui-icon_msg"></i>
+        </weui-cell>
+        <weui-cell title="可点击的单元格" [clickable]="true" value="跳转"></weui-cell>
+        <weui-cell title="链接样式" [isLink]="true" value="跳转"></weui-cell>
+        <weui-cell title="禁用状态" [disabled]="true" value="不可点击"></weui-cell>
+      </div>
+    </div>
+
+    <!-- 按钮组 -->
+    <div class="demo-block">
+      <h3 class="block-title">按钮组</h3>
+      <p class="block-desc">配合单元格使用</p>
+      
+      <div class="weui-cells">
+        <weui-cell title="打开对话框" [clickable]="true" (click)="openDialog()">
+          <i slot="ft" class="weui-icon-arrow"></i>
+        </weui-cell>
+        <weui-cell title="打开警告框" [clickable]="true" (click)="openAlert()">
+          <i slot="ft" class="weui-icon-arrow"></i>
+        </weui-cell>
+        <weui-cell title="打开确认框" [clickable]="true" (click)="openConfirm()">
+          <i slot="ft" class="weui-icon-arrow"></i>
+        </weui-cell>
+        <weui-cell title="打开操作表" [clickable]="true" (click)="openActionSheet()">
+          <i slot="ft" class="weui-icon-arrow"></i>
+        </weui-cell>
+      </div>
+    </div>
+
+    <!-- 对话框 -->
+    <div class="demo-block">
+      <h3 class="block-title">Dialog 对话框</h3>
+      <p class="block-desc">模态对话框组件</p>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="openDialog()">打开对话框</weui-button>
+        <weui-button buttonType="warn" (click)="openAlert()">打开警告框</weui-button>
+        <weui-button buttonType="default" (click)="openConfirm()">打开确认框</weui-button>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="demo-block">
+      <h3 class="block-title">Toast 提示</h3>
+      <p class="block-desc">轻提示组件，用于显示操作结果。除 loading 类型外，其他类型默认自动关闭（1500毫秒）。同时只能存在一个 Toast，新 Toast 会自动替换旧的。现已优化响应速度，点击后立即显示。</p>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="showToast('success', '操作成功')">成功提示（✓自动关闭）</weui-button>
+        <weui-button buttonType="default" (click)="showToast('warning', '警告信息')">警告提示（✓自动关闭）</weui-button>
+        <weui-button buttonType="warn" (click)="showToast('error', '操作失败')">错误提示（✓自动关闭）</weui-button>
+      </div>
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="showToast('loading', '加载中...')">加载提示（✗手动关闭）</weui-button>
+        <weui-button buttonType="default" (click)="closeLoadingToast()">关闭加载提示</weui-button>
+        <weui-button buttonType="default" (click)="showToast('text', '纯文本提示')">文本提示（✓自动关闭）</weui-button>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="showServiceExamples()">Toast Service 示例</weui-button>
+        <weui-button buttonType="default" (click)="hideServiceToast()">关闭 Service Toast</weui-button>
+        <weui-button buttonType="warn" (click)="destroyAllToasts()">销毁所有 Toast</weui-button>
+        <weui-button buttonType="default" (click)="testServiceToastCleanup()">测试Service清理</weui-button>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="demonstrateSingleToast()">演示单一 Toast</weui-button>
+        <weui-button buttonType="default" (click)="testStackOverflowFix()">测试栈溢出修复</weui-button>
+        <weui-button buttonType="default" (click)="testCircularReferenceFix()">测试循环引用修复</weui-button>
+        <weui-button buttonType="primary" (click)="testAutoClose()">测试自动关闭</weui-button>
+        <weui-button buttonType="default" (click)="testResponsiveness()">测试响应速度</weui-button>
+      </div>
+    </div>
+
+    <!-- 操作表 -->
+    <div class="demo-block">
+      <h3 class="block-title">ActionSheet 操作列表</h3>
+      <p class="block-desc">从底部弹出的操作菜单</p>
+      
+      <weui-button buttonType="primary" (click)="openActionSheet()">打开操作表</weui-button>
+    </div>
+
+    <!-- 输入框 -->
+    <div class="demo-block">
+      <h3 class="block-title">Input 输入框</h3>
+      <p class="block-desc">表单输入组件</p>
+      
+      <div class="form-group">
+        <weui-input 
+          [(ngModel)]="username"
+          label="用户名"
+          placeholder="请输入用户名"
+          [clearable]="true">
+        </weui-input>
+        
+        <weui-input 
+          [(ngModel)]="password"
+          type="password"
+          label="密码"
+          placeholder="请输入密码">
+        </weui-input>
+        
+        <weui-input 
+          [(ngModel)]="phone"
+          type="tel"
+          label="手机号"
+          placeholder="请输入手机号">
+        </weui-input>
+        
+        <weui-input 
+          [(ngModel)]="email"
+          type="email"
+          label="邮箱"
+          placeholder="请输入邮箱">
+        </weui-input>
+      </div>
+      
+      <weui-button buttonType="primary" [block]="true" (click)="handleSubmit()">提交表单</weui-button>
+    </div>
+
+    <!-- 进度条 -->
+    <div class="demo-block">
+      <h3 class="block-title">Progress 进度条</h3>
+      <p class="block-desc">展示操作进度</p>
+      
+      <div class="progress-demo">
+        <weui-progress [value]="progressValue" [showText]="true"></weui-progress>
+        <div class="progress-status" *ngIf="progressValue >= 100">完成!</div>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="startProgress()">开始进度</weui-button>
+      </div>
+      
+      <div class="progress-demo">
+        <weui-progress [value]="75" status="success" [showText]="true"></weui-progress>
+      </div>
+      
+      <div class="progress-demo">
+        <weui-progress [value]="50" status="warning" [showText]="true"></weui-progress>
+      </div>
+      
+      <div class="progress-demo">
+        <weui-progress [value]="25" status="error" [showText]="true"></weui-progress>
+      </div>
+    </div>
+
+    <!-- 弹性布局 -->
+    <div class="demo-block">
+      <h3 class="block-title">Flex 弹性布局</h3>
+      <p class="block-desc">基于 Flexbox 的布局组件</p>
+      
+      <div class="flex-demo">
+        <p>基础布局:</p>
+        <weui-flex gap="md">
+          <weui-flex-item><div class="flex-item">1</div></weui-flex-item>
+          <weui-flex-item><div class="flex-item">2</div></weui-flex-item>
+          <weui-flex-item><div class="flex-item">3</div></weui-flex-item>
+        </weui-flex>
+        
+        <p>居中对齐:</p>
+        <weui-flex [justify]="'center'" gap="md">
+          <weui-flex-item><div class="flex-item">居中</div></weui-flex-item>
+        </weui-flex>
+        
+        <p>两端对齐:</p>
+        <weui-flex [justify]="'between'" gap="md">
+          <weui-flex-item><div class="flex-item">左侧</div></weui-flex-item>
+          <weui-flex-item><div class="flex-item">右侧</div></weui-flex-item>
+        </weui-flex>
+      </div>
+    </div>
+
+    <!-- 网格 -->
+    <div class="demo-block">
+      <h3 class="block-title">Grid 网格</h3>
+      <p class="block-desc">九宫格布局组件</p>
+      
+      <p>3列网格 (Emoji图标):</p>
+      <weui-grid>
+        <weui-grid-item *ngFor="let item of [1,2,3,4,5,6,7,8,9]" 
+                       [icon]="['📱', '💬', '📷', '🎵', '📹', '📍', '💳', '📤', '📥'][item - 1]" 
+                       [label]="['微信', '通讯录', '朋友圈', '小程序', '游戏', '收藏', '卡包', '表情', '设置'][item - 1]">
+        </weui-grid-item>
+      </weui-grid>
+      
+      <p>2列网格 (图片图标):</p>
+      <weui-grid>
+        <weui-grid-item src="https://cn.bing.com/th?id=OHR.TadamiRiver_ZH-CN8656732915_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=28&h=28&rs=1" label="风景" iconAlt="风景图片"></weui-grid-item>
+        <weui-grid-item src="https://cn.bing.com/th?id=OHR.CormorantsSky_ZH-CN8589139483_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp&w=28&h=28&rs=1" label="动物" iconAlt="动物图片"></weui-grid-item>
+        <weui-grid-item icon="🌟" label="收藏"></weui-grid-item>
+        <weui-grid-item icon="⚙️" label="设置"></weui-grid-item>
+      </weui-grid>
+    </div>
+
+    <!-- 列表 -->
+    <div class="demo-block">
+      <h3 class="block-title">List 列表</h3>
+      <p class="block-desc">带缩略图的列表组件</p>
+      
+      <weui-list [access]="true">
+        <div class="list-item" *ngFor="let item of listData">
+          <span class="list-label">{{ item.label }}</span>
+          <span class="list-value">{{ item.value }}</span>
+          <i *ngIf="item.arrow" class="weui-icon-arrow list-arrow"></i>
+        </div>
+      </weui-list>
+    </div>
+
+    <!-- 加载更多 -->
+    <div class="demo-block">
+      <h3 class="block-title">Loadmore 加载更多</h3>
+      <p class="block-desc">列表底部加载状态</p>
+      
+      <div class="loadmore-demo">
+        <div class="loadmore-content">列表内容区域</div>
+        <weui-loadmore 
+          [type]="loadMoreType"
+          [loadingText]="'正在加载...'"
+          [nodataText]="'没有更多数据了'">
+        </weui-loadmore>
+      </div>
+      
+      <div class="demo-row">
+        <weui-button buttonType="default" size="small" (click)="loadMore()">加载更多</weui-button>
+        <weui-button buttonType="default" size="small" (click)="resetLoadMore()">重置</weui-button>
+      </div>
+    </div>
+
+    <!-- 面板 -->
+    <div class="demo-block">
+      <h3 class="block-title">Panel 面板</h3>
+      <p class="block-desc">卡片面板组件</p>
+      
+      <weui-panel title="图文组合列表" more="查看更多">
+        <div class="panel-media">
+          <div class="media-item" *ngFor="let item of [1,2,3]">
+            <img [src]="'https://via.placeholder.com/100x100/07c160/ffffff?text=' + item" alt="" />
+          </div>
+        </div>
+      </weui-panel>
+    </div>
+
+    <!-- 预览 -->
+    <div class="demo-block">
+      <h3 class="block-title">Preview 预览</h3>
+      <p class="block-desc">信息预览组件，常用于订单详情</p>
+      
+      <weui-preview 
+        title="订单信息"
+        subTitle="订单号: 202401010001"
+        [value]="'¥99.00'"
+        [valueBold]="true"
+        primaryBtn="确认支付"
+        secondaryBtn="取消订单">
+        <weui-preview-item label="商品名称" value="Angular WeUI 组件库"></weui-preview-item>
+        <weui-preview-item label="购买数量" value="1"></weui-preview-item>
+        <weui-preview-item label="订单金额" value="¥99.00" [bold]="true"></weui-preview-item>
+      </weui-preview>
+    </div>
+
+    <!-- 文章 -->
+    <div class="demo-block">
+      <h3 class="block-title">Article 文章</h3>
+      <p class="block-desc">文章阅读组件</p>
+      
+      <weui-article 
+        title="Angular WeUI 组件库正式发布"
+        author="Angular WeUI Team"
+        time="2024-01-01">
+        <p>Angular WeUI 是一个基于 Angular 框架的 UI 组件库，旨在为开发者提供与微信原生视觉体验一致的 UI 组件。</p>
+        <p>组件库包含了按钮、表单、对话框、列表、网格等常用组件，并且支持主题定制和暗黑模式。</p>
+        <p>我们希望这个组件库能够帮助开发者快速构建高质量的移动端应用。</p>
+      </weui-article>
+    </div>
+
+    <!-- 图标 -->
+    <div class="demo-block">
+      <h3 class="block-title">Icon 图标</h3>
+      <p class="block-desc">内置 SVG 图标</p>
+      
+      <div class="icon-grid">
+        <div class="icon-item">
+          <weui-icon type="success" size="large"></weui-icon>
+          <span>success</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="warning" size="large"></weui-icon>
+          <span>warning</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="error" size="large"></weui-icon>
+          <span>error</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="info" size="large"></weui-icon>
+          <span>info</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="search" size="large"></weui-icon>
+          <span>search</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="close" size="large"></weui-icon>
+          <span>close</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="loading" size="large" [spin]="true"></weui-icon>
+          <span>loading</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="home" size="large"></weui-icon>
+          <span>home</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="star" size="large"></weui-icon>
+          <span>star</span>
+        </div>
+        <div class="icon-item">
+          <weui-icon type="heart" size="large"></weui-icon>
+          <span>heart</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 徽章 -->
+    <div class="demo-block">
+      <h3 class="block-title">Badge 徽章</h3>
+      <p class="block-desc">数字角标组件</p>
+      
+      <div class="demo-row">
+        <weui-badge value="5"></weui-badge>
+        <weui-badge value="99"></weui-badge>
+        <weui-badge value="100" [max]="99"></weui-badge>
+        <weui-badge value="新" shape="square"></weui-badge>
+        <weui-badge value="" shape="dot"></weui-badge>
+      </div>
+      
+      <div class="demo-row">
+        <weui-badge value="热" status="warning"></weui-badge>
+        <weui-badge value="NEW" status="primary"></weui-badge>
+        <weui-badge value="成功" status="success"></weui-badge>
+        <weui-badge value="错误" status="error"></weui-badge>
+      </div>
+    </div>
+
+    <!-- 步骤条 -->
+    <div class="demo-block">
+      <h3 class="block-title">Steps 步骤条</h3>
+      <p class="block-desc">分步操作指示器</p>
+      
+      <weui-steps [direction]="'vertical'">
+        <weui-step title="选择服务" description="选择您需要的服务类型" [status]="componentStep >= 1 ? (componentStep > 1 ? 'finish' : 'process') : 'wait'"></weui-step>
+        <weui-step title="填写信息" description="填写相关的服务信息" [status]="componentStep >= 2 ? (componentStep > 2 ? 'finish' : 'process') : 'wait'"></weui-step>
+        <weui-step title="确认订单" description="确认订单信息并支付" [status]="componentStep >= 3 ? (componentStep > 3 ? 'finish' : 'process') : 'wait'"></weui-step>
+        <weui-step title="完成" description="服务已完成" [status]="componentStep >= 4 ? 'finish' : 'wait'"></weui-step>
+      </weui-steps>
+      
+      <div class="demo-row">
+        <weui-button buttonType="default" size="small" [disabled]="componentStep <= 1" (click)="prevComponentStep()">上一步</weui-button>
+        <weui-button buttonType="primary" size="small" [disabled]="componentStep >= 4" (click)="nextComponentStep()">下一步</weui-button>
+      </div>
+    </div>
+
+    <!-- 选择器 -->
+    <div class="demo-block">
+      <h3 class="block-title">Picker 选择器</h3>
+      <p class="block-desc">多列滚动选择器组件</p>
+      
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="openCityPicker()">城市选择器</weui-button>
+        <weui-button buttonType="primary" (click)="openDatePicker()">日期选择器</weui-button>
+      </div>
+      <p *ngIf="selectedCity" class="selected-result">已选择城市: {{ selectedCity }}</p>
+      <p *ngIf="selectedDate" class="selected-result">已选择日期: {{ selectedDate }}</p>
+    </div>
+  </div>
+
+  <!-- 图库 -->
+  <div *ngIf="currentSection === 'gallery'" class="demo-section">
+    <div class="demo-block">
+      <h3 class="block-title">Gallery 图库</h3>
+      <p class="block-desc">图片预览组件，支持滑动和删除</p>
+      
+      <div class="gallery-grid">
+        <div 
+          *ngFor="let img of galleryImages; let i = index"
+          class="gallery-item"
+          (click)="openGallery(i)">
+          <img [src]="img.src" [alt]="img.alt" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 我的 -->
+  <div *ngIf="currentSection === 'profile'" class="demo-section">
+    <div class="demo-block">
+      <h3 class="block-title">用户中心</h3>
+      
+      <!-- 用户信息卡片 -->
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <img src="https://via.placeholder.com/80x80/07c160/ffffff?text=User" alt="avatar" />
+        </div>
+        <div class="profile-info">
+          <div class="profile-name">Angular Developer</div>
+          <div class="profile-id">ID: 123456789</div>
+        </div>
+      </div>
+      
+      <!-- 设置列表 -->
+      <div class="weui-cells">
+        <weui-cell title="个人资料" [isLink]="true" value=""></weui-cell>
+        <weui-cell title="账户安全" [isLink]="true" value=""></weui-cell>
+        <weui-cell title="消息通知" [isLink]="true" value=""></weui-cell>
+        <weui-cell title="隐私设置" [isLink]="true" value=""></weui-cell>
+        <weui-cell title="通用设置" [isLink]="true" value=""></weui-cell>
+      </div>
+      
+      <div class="weui-cells" style="margin-top: 12px;">
+        <weui-cell title="关于我们" [isLink]="true" value=""></weui-cell>
+        <weui-cell title="帮助与反馈" [isLink]="true" value=""></weui-cell>
+        <weui-cell title="退出登录" [isLink]="true" value="" (click)="showToast('info', '退出登录')"></weui-cell>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部页脚 -->
+  <weui-footer [text]="'Angular WeUI v1.0.0'"></weui-footer>
+</div>
+
+<!-- Toast 提示 -->
+<weui-toast 
+  #toastComponent
+  [visible]="toastVisible" 
+  [message]="toastMessage" 
+  [type]="toastType"
+  [autoClose]="toastType !== 'loading'"
+  [duration]="1500"
+  (close)="hideToast()">
+</weui-toast>
+
+<!-- 对话框 -->
+<weui-dialog 
+  [visible]="dialogVisible"
+  title="提示"
+  content="这是一个对话框示例，展示 Angular WeUI 组件库的对话框功能。"
+  confirmText="确定"
+  cancelText="取消"
+  (confirm)="handleDialogConfirm()"
+  (cancel)="handleDialogCancel()">
+</weui-dialog>
+
+<!-- 警告框 -->
+<weui-dialog 
+  [visible]="alertVisible"
+  title="警告"
+  content="这是一个警告对话框，请注意相关操作。"
+  [showCancelButton]="false"
+  confirmText="我知道了"
+  confirmButtonType="warn"
+  (confirm)="handleAlertConfirm()">
+</weui-dialog>
+
+<!-- 确认框 -->
+<weui-dialog 
+  [visible]="confirmVisible"
+  type="confirm"
+  title="确认删除"
+  content="确定要删除这个项目吗？此操作无法撤销。"
+  confirmText="删除"
+  cancelText="取消"
+  confirmButtonType="warn"
+  (confirm)="handleConfirmOk()"
+  (cancel)="handleConfirmCancel()">
+</weui-dialog>
+
+<!-- 操作表 -->
+<weui-actionsheet 
+  [visible]="actionSheetVisible"
+  [actions]="actions"
+  title="请选择操作"
+  cancelText="取消"
+  (select)="handleActionSelect($event.item, $event.index)"
+  (cancel)="handleActionCancel()">
+</weui-actionsheet>
+
+<!-- 图库 -->
+<weui-gallery 
+  [images]="galleryImages"
+  [visible]="galleryVisible"
+  [index]="galleryIndex"
+  [showInfo]="true"
+  [showDelete]="true"
+  (visibleChange)="galleryVisible = $event"
+  (indexChange)="galleryIndex = $event">
+</weui-gallery>
+
+<!-- 选择器 -->
+<weui-picker
+  [visible]="pickerVisible"
+  [columns]="cityColumns"
+  title="请选择城市"
+  (confirm)="handlePickerConfirm($event)"
+  (cancel)="handlePickerCancel()">
+</weui-picker>
+
+<!-- 日期选择器 -->
+<weui-picker
+  [(visible)]="dateVisible"
+  [columns]="dateColumns"
+  [defaultIndexes]="selectedDateIndexes"
+  title="选择日期"
+  (confirm)="handleDateConfirm($event)"
+  (change)="handleDateChange($event)"
+  (cancel)="dateVisible = false">
+</weui-picker>
+
+<!-- 标签栏 -->
+<weui-tabbar 
+  [items]="tabbarItems"
+  [(activeIndex)]="activeTabIndex"
+  (change)="handleTabChange($event)">
+</weui-tabbar>

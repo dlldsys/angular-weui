@@ -1,0 +1,185 @@
+@use '../../../theme/variables' as *;
+
+.weui-btn__wrapper {
+  display: inline-block;
+}
+
+// 按钮基础样式 (官方 weui-btn)
+.weui-btn {
+  position: relative;
+  display: block;
+  min-width: 184px;
+  max-width: 280px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1.4;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  border-width: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--weui-BTN-ACTIVE-MASK);
+      border-radius: 8px;
+    }
+
+    &.weui-btn_loading,
+    &.weui-btn_disabled,
+    &[disabled] {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+// 按钮类型
+.weui-btn_primary {
+  background-color: var(--weui-BRAND);
+
+  &:not(.weui-btn_disabled):visited {
+    color: #fff;
+  }
+}
+
+.weui-btn_default {
+  background-color: var(--weui-BG-2);
+  color: var(--weui-FG-0);
+
+  &:not(.weui-btn_disabled):active {
+    background-color: var(--weui-BTN-DEFAULT-ACTIVE-BG);
+  }
+}
+
+.weui-btn_warn {
+  background-color: var(--weui-RED);
+
+  &:not(.weui-btn_disabled):active {
+    background-color: var(--weui-BTN-DEFAULT-ACTIVE-BG);
+  }
+}
+
+// 按钮大小 (官方命名)
+.weui-btn_mini {
+  min-width: 0;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.weui-btn_xmini {
+  min-width: 0;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.weui-btn_medium {
+  min-width: 0;
+  padding: 10px 24px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+// 按钮状态
+.weui-btn_disabled {
+  color: var(--weui-FG-2);
+  background-color: var(--weui-FG-5);
+}
+
+.weui-btn_loading {
+  pointer-events: none;
+}
+
+// 布局
+.weui-btn_block {
+  width: auto;
+  display: flex;
+}
+
+.weui-btn_inline {
+  display: inline-block;
+}
+
+// 按钮内部元素
+.weui-btn__inner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.weui-btn__loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Loading 动画 (官方样式)
+.weui-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Ccircle cx='21' cy='21' r='15.5' fill='none' stroke='%23ffffff' stroke-width='3' stroke-opacity='0.3'/%3E%3Ccircle cx='21' cy='21' r='15.5' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-dasharray='25 75'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 21 21' to='360 21 21' dur='0.8s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E") no-repeat;
+  background-size: 100% 100%;
+}
+
+// 按钮间距 (官方)
+.weui-btn + .weui-btn {
+  margin-top: 16px;
+}
+
+.weui-btn_inline + .weui-btn_inline {
+  margin-left: 16px;
+}
+
+.weui-btn-area {
+  margin: 48px 16px 8px;
+
+  .weui-btn {
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.weui-btn-area_inline {
+  display: flex;
+
+  .weui-btn {
+    margin-top: 0;
+    margin-right: 16px;
+    width: 100%;
+    flex: 1;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

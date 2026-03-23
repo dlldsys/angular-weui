@@ -1,0 +1,235 @@
+// WeUI Angular Mixins
+// Reference: https://github.com/weui/weui
+
+@use 'sass:math';
+
+// 官方按钮尺寸
+$weui-btn-width: 184px;
+$weui-btn-height: 48px;
+$weui-btn-font-size: 17px;
+$weui-btn-border-radius: 8px;
+$weui-btn-default-gap: 16px;
+
+$weui-btn-mini-font-size: 14px;
+$weui-btn-mini-height: 32px;
+
+$weui-btn-cell-height: 56px;
+$weui-btn-cell-gap: 16px;
+
+// 按钮基础样式 (官方)
+@mixin button-base {
+  position: relative;
+  display: block;
+  min-width: $weui-btn-width;
+  max-width: 280px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: $weui-btn-font-size;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: math.div($weui-btn-height - 24, $weui-btn-font-size);
+  border-radius: $weui-btn-border-radius;
+  cursor: default;
+  user-select: none;
+  border-width: 0;
+  outline: 0;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--weui-BTN-ACTIVE-MASK);
+      border-radius: $weui-btn-border-radius;
+    }
+
+    &.weui-btn_loading,
+    &.weui-btn_disabled,
+    &[disabled] {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin button-primary {
+  background-color: var(--weui-BRAND);
+
+  &:not(.weui-btn_disabled):visited {
+    color: #fff;
+  }
+}
+
+@mixin button-default {
+  background-color: var(--weui-BG-2);
+  color: var(--weui-FG-0);
+
+  &:not(.weui-btn_disabled):active {
+    background-color: var(--weui-BTN-DEFAULT-ACTIVE-BG);
+  }
+}
+
+@mixin button-warn {
+  background-color: var(--weui-RED);
+
+  &:not(.weui-btn_disabled):active {
+    background-color: var(--weui-BTN-DEFAULT-ACTIVE-BG);
+  }
+}
+
+@mixin button-disabled {
+  color: var(--weui-FG-2);
+  background-color: var(--weui-FG-5);
+}
+
+@mixin button-loading {
+  pointer-events: none;
+}
+
+// Cell 样式 (官方)
+@mixin cell-base {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  background-color: var(--weui-BG-2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 16px;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+  }
+
+  &:active {
+    background-color: var(--weui-BG-1);
+  }
+}
+
+@mixin cell-access {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 6px;
+    height: 6px;
+    margin-top: -4px;
+    border: 1px solid var(--weui-FG-2);
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+}
+
+// 输入框样式 (官方)
+@mixin input-base {
+  width: 100%;
+  height: var(--weui-INPUT-HEIGHT);
+  padding: 10px 16px;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+  font-size: var(--weui-font-size-md);
+  color: var(--weui-FG-0);
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: var(--weui-FG-1);
+  }
+}
+
+// 对话框样式 (官方)
+@mixin dialog-base {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+  max-width: calc(100vw - 60px);
+  background-color: var(--weui-BG-2);
+  border-radius: 0;
+  z-index: var(--weui-z-index-modal);
+  overflow: hidden;
+}
+
+// Toast 样式 (官方)
+@mixin toast-base {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 88px;
+  max-width: 70%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 0;
+  z-index: var(--weui-z-index-tooltip);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+// 遮罩层样式
+@mixin mask-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--weui-z-index-modal-backdrop);
+}
+
+// 动画
+@mixin fade-in {
+  animation: weuiFadeIn var(--weui-animation-duration-normal, 300ms) ease;
+}
+
+@mixin fade-out {
+  animation: weuiFadeOut var(--weui-animation-duration-normal, 300ms) ease;
+}
+
+// 文本省略
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-ellipsis-multiline($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

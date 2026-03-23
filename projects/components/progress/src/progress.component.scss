@@ -1,0 +1,117 @@
+@use '../../../theme/variables' as *;
+
+// Progress 组件 (官方 WeUI)
+.weui-progress {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.weui-progress__bar {
+  background-color: var(--weui-BG-1);
+  height: 6px;
+  flex: 1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.weui-progress__inner-bar {
+  width: 0;
+  height: 100%;
+  background-color: var(--weui-BRAND);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.weui-progress__opr {
+  display: block;
+  margin-left: 15px;
+  font-size: 0;
+}
+
+// 文本
+.weui-progress__text {
+  font-size: 14px;
+  color: var(--weui-FG-0);
+  min-width: 40px;
+  text-align: right;
+  line-height: 1;
+}
+
+// 内嵌文本
+.weui-progress__text-inside {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--weui-FG-0);
+}
+
+// 尺寸变体
+.weui-progress--small {
+  .weui-progress__bar {
+    height: 3px;
+    border-radius: 1.5px;
+  }
+
+  .weui-progress__inner-bar {
+    border-radius: 1.5px;
+  }
+
+  .weui-progress__text {
+    font-size: 12px;
+  }
+}
+
+.weui-progress--large {
+  .weui-progress__bar {
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .weui-progress__inner-bar {
+    border-radius: 4px;
+  }
+
+  .weui-progress__text {
+    font-size: 16px;
+  }
+}
+
+// 状态变体
+.weui-progress--success {
+  .weui-progress__inner-bar {
+    background-color: var(--weui-BRAND);
+  }
+}
+
+.weui-progress--warning {
+  .weui-progress__inner-bar {
+    background-color: var(--weui-YELLOW);
+  }
+}
+
+.weui-progress--error {
+  .weui-progress__inner-bar {
+    background-color: var(--weui-RED);
+  }
+}
+
+// 不确定进度条动画
+.weui-progress--indeterminate {
+  .weui-progress__inner-bar {
+    width: 30% !important;
+    animation: weui-progress-indeterminate 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes weui-progress-indeterminate {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}

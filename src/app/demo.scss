@@ -1,0 +1,554 @@
+// ============================================
+// Angular WeUI 演示样式
+// ============================================
+
+// 变量
+$primary-color: #07c160;
+$text-color: #333;
+$text-secondary: #666;
+$text-muted: #999;
+$bg-color: #f5f5f5;
+$border-color: #e5e5e5;
+$spacing-unit: 16px;
+
+// 容器
+.demo-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  background-color: var(--weui-bg-color);
+  min-height: 100vh;
+}
+
+// 组件导航
+.component-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid $border-color;
+  position: sticky;
+  top: 44px;
+  z-index: 10;
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    .nav-icon {
+      font-size: 24px;
+    }
+
+    .nav-text {
+      font-size: 12px;
+      color: $text-secondary;
+    }
+
+    &:hover {
+      background: rgba($primary-color, 0.1);
+    }
+
+    &.active {
+      background: rgba($primary-color, 0.15);
+
+      .nav-text {
+        color: $primary-color;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// 演示区块
+.demo-section {
+  padding: $spacing-unit;
+  padding-bottom: 80px;
+}
+
+.section-header {
+  text-align: center;
+  padding: 32px 0;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $text-color;
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    font-size: 14px;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+// 功能卡片网格
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+
+  .feature-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: 4px;
+    }
+
+    .feature-desc {
+      font-size: 12px;
+      color: $text-muted;
+    }
+  }
+}
+
+// 快速开始
+.quick-start {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: $text-color;
+  }
+
+  .code-block {
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+
+    code {
+      color: $text-color;
+      font-family: 'Monaco', 'Menlo', monospace;
+    }
+  }
+}
+
+// 最新活动
+.activity-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: $text-color;
+  }
+
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #fafafa;
+    border-radius: 8px;
+
+    .activity-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-color;
+      margin-bottom: 4px;
+    }
+
+    .activity-desc {
+      font-size: 12px;
+      color: $text-muted;
+    }
+
+    .activity-badge {
+      flex-shrink: 0;
+    }
+  }
+}
+
+// 演示块
+.demo-block {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .block-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-color;
+    margin: 0 0 4px 0;
+  }
+
+  .block-desc {
+    font-size: 13px;
+    color: $text-muted;
+    margin: 0 0 16px 0;
+  }
+}
+
+// 演示行
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  weui-button {
+    flex-shrink: 0;
+  }
+}
+
+// 单元格
+.weui-cells {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0;
+}
+
+// 步骤操作
+.step-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+// 进度条
+.progress-demo {
+  margin-bottom: 12px;
+
+  weui-progress {
+    display: block;
+  }
+
+  .progress-status {
+    text-align: center;
+    color: $primary-color;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+// Flex 演示
+.flex-demo {
+  p {
+    font-size: 14px;
+    color: $text-secondary;
+    margin: 12px 0 8px 0;
+  }
+
+  .flex-item {
+    background: rgba($primary-color, 0.1);
+    color: $primary-color;
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
+// 网格演示
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+
+  .grid-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .grid-label {
+    font-size: 12px;
+    color: $text-color;
+  }
+}
+
+// 加载更多演示
+.loadmore-demo {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 16px;
+
+  .loadmore-content {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-muted;
+    font-size: 14px;
+  }
+}
+
+// 面板媒体
+.panel-media {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+
+  .media-item {
+    flex: 1;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+  }
+}
+
+// 图标网格
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+
+    weui-icon {
+      display: block;
+    }
+
+    span {
+      font-size: 11px;
+      color: $text-muted;
+    }
+  }
+}
+
+// 图库网格
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+
+  .gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s;
+    }
+
+    &:active img {
+      transform: scale(0.95);
+    }
+  }
+}
+
+// 用户卡片
+.profile-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, $primary-color 0%, #1aad19 100%);
+  border-radius: 12px;
+  margin-bottom: 16px;
+
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+    background: #fff;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .profile-info {
+    flex: 1;
+
+    .profile-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .profile-id {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+// 表单组
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+// ============================================
+// 响应式适配
+// ============================================
+
+@media (min-width: 768px) {
+  .demo-container {
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .component-nav {
+    position: static;
+  }
+}
+
+// ============================================
+// 暗黑模式
+// ============================================
+
+@media (prefers-color-scheme: dark) {
+  .demo-container {
+    background-color: #1f1f1f;
+  }
+
+  .component-nav {
+    background: #1f1f1f;
+    border-color: #333;
+  }
+
+  .demo-block,
+  .quick-start,
+  .activity-section {
+    background: #2d2d2d;
+  }
+
+  .feature-grid .feature-card {
+    background: #2d2d2d;
+  }
+
+  .section-header h2,
+  .block-title,
+  .profile-card .profile-name,
+  .activity-title {
+    color: #fff;
+  }
+
+  .section-header p,
+  .block-desc,
+  .feature-desc,
+  .activity-desc {
+    color: #999;
+  }
+
+  .icon-grid .icon-item span {
+    color: #999;
+  }
+
+  .flex-demo .flex-item {
+    background: rgba($primary-color, 0.2);
+  }
+
+  .loadmore-demo {
+    background: #252525;
+  }
+
+  .panel-media .media-item img {
+    opacity: 0.8;
+  }
+
+  .weui-cells {
+    background: #2d2d2d;
+  }
+
+  .quick-start .code-block {
+    background: #252525;
+  }
+
+  .activity-item {
+    background: #252525;
+  }
+}
+
+// ============================================
+// 动画
+// ============================================
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.demo-block {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.demo-block:nth-child(2) { animation-delay: 0.05s; }
+.demo-block:nth-child(3) { animation-delay: 0.1s; }
+.demo-block:nth-child(4) { animation-delay: 0.15s; }
+.demo-block:nth-child(5) { animation-delay: 0.2s; }

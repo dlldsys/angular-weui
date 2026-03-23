@@ -1,0 +1,158 @@
+@use '../../../theme/variables' as *;
+
+// Tabbar 容器 (官方)
+.weui-tabbar-wrapper {
+  display: block;
+}
+
+.weui-tabbar {
+  display: flex;
+  position: relative;
+  z-index: 500;
+  background-color: var(--weui-BG-2);
+  height: var(--weui-TABBAR-HEIGHT);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+  }
+
+  &.weui-tabbar--fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  &.weui-tabbar--no-border {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// Tabbar 项目 (官方)
+.weui-tabbar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 8px 0;
+  padding-bottom: calc(8px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  font-size: 0;
+  color: var(--weui-FG-1);
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  border: none;
+  position: relative;
+
+  &:first-child {
+    padding-left: constant(safe-area-inset-left);
+    padding-left: env(safe-area-inset-left);
+  }
+
+  &:last-child {
+    padding-right: constant(safe-area-inset-right);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  &:active {
+    background-color: var(--weui-BG-1);
+  }
+
+  // 激活状态
+  &.weui-bar__item_on,
+  &.weui-tabbar__item--active {
+    .weui-tabbar__icon,
+    .weui-tabbar__icon i {
+      color: var(--weui-BRAND);
+    }
+    
+    .weui-tabbar__label {
+      color: var(--weui-BRAND);
+    }
+  }
+
+  &.weui-tabbar__item--disabled {
+    color: var(--weui-FG-2);
+    cursor: not-allowed;
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+// Tabbar 图标 (官方)
+.weui-tabbar__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+  line-height: 1;
+  position: relative;
+
+  // WeUI font icons
+  i {
+    font-size: 24px;
+    line-height: 1;
+    color: inherit;
+  }
+
+  // Image icons
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  // Emoji icons
+  .weui-tabbar__icon-emoji {
+    font-size: 20px;
+    line-height: 1;
+  }
+}
+
+// Tabbar 标签 (官方)
+.weui-tabbar__label {
+  color: var(--weui-FG-0);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+// Tabbar 徽章
+.weui-tabbar__badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background-color: var(--weui-RED);
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+// 响应式设计
+@media (max-width: 480px) {
+  .weui-tabbar {
+    height: 50px;
+  }
+}

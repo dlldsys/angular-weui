@@ -1,0 +1,159 @@
+@use '../../../theme/variables' as *;
+
+// Gallery 遮罩层
+.weui-gallery {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: gallery-fade-in 0.2s ease;
+}
+
+@keyframes gallery-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// 删除按钮
+.weui-gallery__op {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.weui-gallery__del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.weui-icon_gallery-del {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// 图片信息
+.weui-gallery__info {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: var(--weui-font-size-sm);
+  z-index: 10;
+}
+
+// 图片容器
+.weui-gallery__img-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--weui-spacing-lg);
+  box-sizing: border-box;
+}
+
+.weui-gallery__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  animation: gallery-img-zoom-in 0.2s ease;
+}
+
+@keyframes gallery-img-zoom-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// 图片描述
+.weui-gallery__desc {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  color: #fff;
+  font-size: var(--weui-font-size-sm);
+  text-align: center;
+  line-height: 1.4;
+}
+
+// 控制按钮容器
+.weui-gallery__control {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+// 箭头按钮
+.weui-gallery__arrow {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.weui-gallery__arrow-inner {
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.weui-gallery__arrow_l {
+  .weui-gallery__arrow-inner {
+    transform: rotate(-135deg);
+    margin-left: 4px;
+  }
+}
+
+.weui-gallery__arrow_r {
+  .weui-gallery__arrow-inner {
+    transform: rotate(45deg);
+    margin-right: 4px;
+  }
+}

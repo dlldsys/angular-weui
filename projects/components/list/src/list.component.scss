@@ -1,0 +1,167 @@
+@use '../../../theme/variables' as *;
+
+.weui-list-wrapper {
+  display: block;
+}
+
+// List 容器
+.weui-list {
+  position: relative;
+  background-color: var(--weui-BG-2);
+
+  // 分组
+  &__group {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: var(--weui-FG-3);
+      z-index: 2;
+    }
+  }
+
+  // 分组标题
+  &__group-title {
+    padding: 16px 16px 8px;
+    font-size: 12px;
+    color: var(--weui-FG-1);
+    line-height: 1.4;
+  }
+
+  // 链接样式
+  &.weui-list_access {
+    .weui-list__item {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        width: 6px;
+        height: 6px;
+        margin-top: -4px;
+        border: 1px solid var(--weui-FG-2);
+        border-bottom: none;
+        border-left: none;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+// List Item
+.weui-list__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  background-color: var(--weui-BG-2);
+  font-size: 17px;
+  color: var(--weui-FG-0);
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 16px;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+    z-index: 2;
+  }
+
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+
+  &:active {
+    background-color: var(--weui-BG-1);
+  }
+
+  // 头部（图标/缩略图）
+  &__hd {
+    flex-shrink: 0;
+    margin-right: 12px;
+
+    img {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    i {
+      font-size: 24px;
+      color: var(--weui-FG-1);
+    }
+  }
+
+  // 主体
+  &__bd {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 标签
+  &__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // 描述
+  &__desc {
+    font-size: 12px;
+    color: var(--weui-FG-2);
+    padding-top: 4px;
+    line-height: 1.4;
+  }
+
+  // 尾部
+  &__ft {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: var(--weui-FG-1);
+    font-size: 14px;
+  }
+
+  // 值
+  &__value {
+    margin-right: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &-bold {
+      font-weight: 600;
+      color: var(--weui-FG-0);
+    }
+  }
+
+  // 箭头
+  &__arrow {
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--weui-FG-2);
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+}

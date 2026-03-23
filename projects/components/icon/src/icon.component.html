@@ -1,0 +1,20 @@
+<ng-container *ngIf="svgPath; else customIcon">
+  <svg 
+    class="weui-icon" 
+    [class]="iconClass.join(' ')" 
+    [style.color]="color"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg">
+    <path [attr.d]="svgPath"></path>
+  </svg>
+</ng-container>
+
+<ng-template #customIcon>
+  <i 
+    class="weui-icon" 
+    [class]="iconClass.join(' ')"
+    [style.color]="color">
+    <ng-content></ng-content>
+  </i>
+</ng-template>

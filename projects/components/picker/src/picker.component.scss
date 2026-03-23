@@ -1,0 +1,220 @@
+@use '../../../theme/variables' as *;
+
+.weui-picker-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.weui-picker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5000;
+  visibility: hidden;
+  
+  &.weui-picker--visible {
+    visibility: visible;
+  }
+}
+
+.weui-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  
+  &.weui-mask--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// 半屏对话框样式
+.weui-half-screen-dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 75vh;
+  background: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  
+  &.weui-half-screen-dialog--show {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.weui-half-screen-dialog__hd {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px 6px 24px;
+  min-height: 48px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.weui-half-screen-dialog__hd__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.weui-half-screen-dialog__title {
+  font-weight: 500;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.weui-half-screen-dialog__bd {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+}
+
+.weui-half-screen-dialog__ft {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 24px 12px 24px;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+  
+  .weui-btn {
+    flex: 1;
+    margin: 0;
+    min-width: auto;
+    
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
+
+// Picker 样式
+.weui-picker__bd {
+  display: flex;
+  height: 238px;
+  background: #fafafa;
+  overflow: hidden;
+  border-top: 1px solid #d9d9d9;
+}
+
+.weui-picker__group {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  
+  &:not(:last-child) {
+    border-right: 1px solid #d9d9d9;
+  }
+}
+
+.weui-picker__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  background-position: top, center, bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 76px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.weui-picker__indicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 34px;
+  transform: translateY(-50%);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+}
+
+.weui-picker__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 102px 0;
+  box-sizing: border-box;
+  overflow: visible;
+  -webkit-overflow-scrolling: touch;
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+
+.weui-picker__item {
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 17px;
+  color: #333333;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  opacity: 1;
+  visibility: visible;
+  
+  &:active {
+    background: #f5f5f5;
+  }
+  
+  &.weui-picker__item--selected {
+    color: #000000;
+    font-weight: 600;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.02);
+  }
+  
+  &.weui-picker__item--disabled {
+    color: #cccccc;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.weui-picker__btn {
+  font-weight: 500;
+}

@@ -1,0 +1,177 @@
+@use '../../../theme/variables' as *;
+
+// Navbar 容器 (官方)
+.weui-navbar-wrapper {
+  display: block;
+}
+
+.weui-navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--weui-NAV-HEIGHT); // 45px 官方
+  background-color: var(--weui-BG-2);
+  padding: 0 16px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--weui-FG-0);
+  box-sizing: border-box;
+
+  &.weui-navbar--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  &.weui-navbar--no-border {
+    border-bottom: none;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &.weui-navbar--light {
+    background-color: var(--weui-BG-1);
+  }
+
+  &.weui-navbar--dark {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--weui-FG-3);
+  }
+}
+
+// Navbar 左侧区域
+.weui-navbar__left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+}
+
+// Navbar 标题区域
+.weui-navbar__title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Navbar 右侧区域
+.weui-navbar__right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  min-width: 60px;
+  justify-content: flex-end;
+}
+
+// Navbar 返回按钮 (官方)
+.weui-navbar__back {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 8px;
+  margin: -8px;
+  color: var(--weui-BRAND);
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    background-color: var(--weui-FG-5);
+  }
+}
+
+.weui-navbar__back-icon {
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
+
+.weui-navbar__back-text {
+  font-size: inherit;
+  color: inherit;
+}
+
+// Navbar 标题文本
+.weui-navbar__title-text {
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+// Navbar Tab 样式
+.weui-navbar__tabs {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.weui-navbar__tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 15px;
+  color: var(--weui-FG-1);
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:active {
+    background-color: var(--weui-FG-5);
+  }
+
+  &.weui-navbar__tab--active {
+    color: var(--weui-BRAND);
+    font-weight: 500;
+  }
+}
+
+// 响应式设计
+@media (max-width: 480px) {
+  .weui-navbar {
+    height: 44px;
+    padding: 0 12px;
+    font-size: 16px;
+  }
+
+  .weui-navbar__title {
+    margin: 0 12px;
+  }
+
+  .weui-navbar__back {
+    font-size: 15px;
+  }
+
+  .weui-navbar__back-icon {
+    width: 10px;
+    height: 10px;
+    border-width: 1px;
+  }
+}
