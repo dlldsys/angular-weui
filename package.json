@@ -1,5 +1,5 @@
 {
-  "name": "angular-weui",
+  "name": "angular-weui-components",
   "version": "0.1.0-alpha.1",
   "description": "Angular WeUI component library - WeChat UI components for Angular applications",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:lib": "ng build angular-weui --configuration production && npm run build:package",
-    "build:package": "cp public_api.ts dist/angular-weui/index.ts && cp README.md dist/angular-weui/ && cp LICENSE dist/angular-weui/",
+    "build:package": "mkdir -p dist/angular-weui && cp public_api.ts dist/angular-weui/index.ts && cp README.md dist/angular-weui/ && cp LICENSE dist/angular-weui/ && cp package.lib.json dist/angular-weui/package.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:performance": "ng build && echo 'Performance testing guide created. Open performance-test.ts in browser console.'",
@@ -17,7 +17,7 @@
     "test:components": "echo 'Run performanceTests.runAll() in browser console'",
     "storybook": "ng run angular-weui:storybook",
     "build-storybook": "ng run angular-weui:build-storybook",
-    "publish:npm": "npm run build:lib && cd dist/angular-weui && npm publish"
+    "publish:npm": "npm run build:package && cd dist/angular-weui && npm publish"
   },
   "private": false,
   "publishConfig": {

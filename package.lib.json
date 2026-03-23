@@ -1,0 +1,34 @@
+{
+  "name": "angular-weui-components",
+  "version": "0.1.0-alpha.1",
+  "description": "Angular WeUI component library - WeChat UI components for Angular applications",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "angular",
+    "weui",
+    "wechat",
+    "ui",
+    "components",
+    "mobile",
+    "typescript"
+  ],
+  "author": "dlldsys",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlldsys/angular-weui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlldsys/angular-weui/issues"
+  },
+  "homepage": "https://dlldsys.github.io/angular-weui/",
+  "peerDependencies": {
+    "@angular/core": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "rxjs": "^7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
