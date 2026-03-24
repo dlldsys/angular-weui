@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-export interface WeUIActionSheetItem {
+export interface WeUIActionsheetItem {
   name: string;
   value?: any;
   type?: 'default' | 'warn' | 'disabled';
@@ -63,9 +63,9 @@ export interface WeUIActionSheetItem {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WeUIActionSheetComponent {
+export class WeUIActionsheetComponent {
   @Input() visible = false;
-  @Input() actions: WeUIActionSheetItem[] = [];
+  @Input() actions: WeUIActionsheetItem[] = [];
   @Input() title = '';
   @Input() showCancel = true;
   @Input() cancelText = '取消';
@@ -74,7 +74,7 @@ export class WeUIActionSheetComponent {
   @Input() zIndex = 1000;
   @Input() lockScroll = true;
 
-  @Output() select = new EventEmitter<{ item: WeUIActionSheetItem; index: number }>();
+  @Output() select = new EventEmitter<{ item: WeUIActionsheetItem; index: number }>();
   @Output() cancel = new EventEmitter<void>();
   @Output() visibleChange = new EventEmitter<boolean>();
 
@@ -82,7 +82,7 @@ export class WeUIActionSheetComponent {
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  getItemClasses(item: WeUIActionSheetItem): string {
+  getItemClasses(item: WeUIActionsheetItem): string {
     const classes = ['weui-actionsheet__cell'];
     
     if (item.type === 'warn') {
@@ -106,7 +106,7 @@ export class WeUIActionSheetComponent {
     }
   }
 
-  handleActionClick(item: WeUIActionSheetItem, index: number, event: MouseEvent): void {
+  handleActionClick(item: WeUIActionsheetItem, index: number, event: MouseEvent): void {
     if (item.type === 'disabled' || item.loading) {
       event.preventDefault();
       return;

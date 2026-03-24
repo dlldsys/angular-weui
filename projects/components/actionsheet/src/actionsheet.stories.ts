@@ -1,9 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
-import { WeUIActionSheetComponent, WeUIActionSheetItem } from './actionsheet.component';
+import { WeUIActionsheetComponent, WeUIActionsheetItem } from './actionsheet.component';
 
-const meta: Meta<WeUIActionSheetComponent> = {
+const meta: Meta<WeUIActionsheetComponent> = {
   title: 'Components/ActionSheet',
-  component: WeUIActionSheetComponent,
+  component: WeUIActionsheetComponent,
   parameters: {
     layout: 'fullscreen',
   },
@@ -49,34 +49,34 @@ const meta: Meta<WeUIActionSheetComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<WeUIActionSheetComponent>;
+type Story = StoryObj<WeUIActionsheetComponent>;
 
-const basicActions: WeUIActionSheetItem[] = [
+const basicActions: WeUIActionsheetItem[] = [
   { name: '拍照' },
   { name: '从相册选择' },
   { name: '其他文件' }
 ];
 
-const warnActions: WeUIActionSheetItem[] = [
+const warnActions: WeUIActionsheetItem[] = [
   { name: '编辑' },
   { name: '删除', type: 'warn' },
   { name: '举报', type: 'warn' }
 ];
 
-const iconActions: WeUIActionSheetItem[] = [
+const iconActions: WeUIActionsheetItem[] = [
   { name: '发送给朋友', icon: 'weui-icon-share' },
   { name: '收藏', icon: 'weui-icon-star' },
   { name: '保存到相册', icon: 'weui-icon-photo' },
   { name: '复制链接', icon: 'weui-icon-link' }
 ];
 
-const disabledActions: WeUIActionSheetItem[] = [
+const disabledActions: WeUIActionsheetItem[] = [
   { name: '可用操作' },
   { name: '禁用操作', type: 'disabled' },
   { name: '警告操作', type: 'warn' }
 ];
 
-const loadingActions: WeUIActionSheetItem[] = [
+const loadingActions: WeUIActionsheetItem[] = [
   { name: '操作1' },
   { name: '加载中...', loading: true },
   { name: '操作3' }
@@ -185,7 +185,7 @@ export const Interactive: Story = {
       hideActionSheet: function() {
         this['visible'] = false;
       },
-      handleSelect: function(event: { item: WeUIActionSheetItem; index: number }) {
+      handleSelect: function(event: { item: WeUIActionsheetItem; index: number }) {
         console.log('Selected:', event.item.name, 'at index:', event.index);
         this['visible'] = false;
       },
@@ -235,7 +235,7 @@ export const ShareSheet: Story = {
         { name: '微博', icon: 'weui-icon-group' },
         { name: '复制链接', icon: 'weui-icon-link' },
         { name: '更多', icon: 'weui-icon-more' }
-      ] as WeUIActionSheetItem[],
+      ] as WeUIActionsheetItem[],
       showCancel: true
     },
     template: `
@@ -260,7 +260,7 @@ export const DangerSheet: Story = {
         { name: '编辑', type: 'default' },
         { name: '复制', type: 'default' },
         { name: '删除', type: 'warn' }
-      ] as WeUIActionSheetItem[],
+      ] as WeUIActionsheetItem[],
       showCancel: true
     },
     template: `
@@ -292,7 +292,7 @@ export const LongList: Story = {
         { name: '选项八' },
         { name: '选项九' },
         { name: '选项十' }
-      ] as WeUIActionSheetItem[],
+      ] as WeUIActionsheetItem[],
       showCancel: true
     },
     template: `

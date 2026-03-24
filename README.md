@@ -2,121 +2,327 @@
 
 Angular WeUI Components 是基于微信官方 WeUI 设计语言开发的 Angular 组件库，为移动端 Web 应用提供一致的微信风格用户体验。
 
-## ⚠️ 开发状态警告
+## 特性
 
-**当前版本：0.1.0-alpha.2**
+- 基于 WeUI 设计规范 - 完美还原微信视觉风格
+- 移动端优化 - 专为移动设备设计的交互体验
+- Angular 15-21 支持 - 使用最新 Angular 技术
+- TypeScript 支持 - 完整的类型定义
+- 组件化开发 - 模块化设计，支持按需引入
+- Tree-shaking 优化 - 自动移除未使用的代码
+- OnPush 变更检测 - 高性能组件渲染
+- 完整的单元测试 - 确保组件稳定性
 
-> **重要提醒：此库仍在开发中，请谨慎使用！**
-> 
-> - API 可能会发生变化
-> - 部分功能可能不稳定
-> - 建议仅用于测试和评估
-> - 生产环境使用请等待正式版发布
+## 支持的 Angular 版本
 
-## 📦 安装
+| Angular 版本 | 支持状态 |
+|------------|--------|
+| Angular 15  | ✅  支持  |
+| Angular 16  | ✅  支持  |
+| Angular 17  | ✅  支持  |
+| Angular 18  | ✅  支持  |
+| Angular 19  | ✅  支持  |
+| Angular 20  | ✅  支持  |
+| Angular 21  | ✅  支持  |
+
+## 安装
 
 ```bash
-# 安装 alpha 预览版
+# 使用 npm 安装稳定版
+npm install angular-weui-components
+
+# 使用 npm 安装 alpha 预览版
 npm install angular-weui-components@alpha
 
-# 或使用 yarn
-yarn add angular-weui-components@alpha
+# 使用 yarn
+yarn add angular-weui-components
 
-# 或使用 pnpm
-pnpm add angular-weui-components@alpha
+# 使用 pnpm
+pnpm add angular-weui-components
 ```
 
-## 🚀 快速开始
+## 快速开始
+
+### 方式一：按需引入（推荐）
 
 ```typescript
-import { ComponentModule } from 'angular-weui-components';
+import { Component } from '@angular/core';
+import { WeUIButtonComponent, WeUIButtonModule } from 'angular-weui-components/button';
+
+@Component({
+  selector: 'app-example',
+  standalone: true,
+  imports: [WeUIButtonComponent]
+})
+export class ExampleComponent {}
+```
+
+### 方式二：模块化导入
+
+```typescript
+import { NgModule } from '@angular/core';
+import { WeUIButtonModule } from 'angular-weui-components/button';
+import { WeUIToastModule } from 'angular-weui-components/toast';
 
 @NgModule({
   imports: [
-    ComponentModule
+    WeUIButtonModule,
+    WeUIToastModule
   ]
 })
 export class AppModule { }
 ```
 
-## ✨ 特性
+### 方式三：完整导入
 
-- 🎨 **基于 WeUI 设计规范** - 完美还原微信视觉风格
-- 📱 **移动端优化** - 专为移动设备设计的交互体验
-- 🅰️ **Angular 21+ 支持** - 使用最新 Angular 技术
-- 📦 **TypeScript 支持** - 完整的类型定义
-- 🎯 **组件化开发** - 模块化设计，按需引入
-- 📖 **完整文档** - 详细的API文档和使用示例
-- 🚀 **零配置** - 开箱即用，简单易用
-
-## 📚 组件列表
-
-### 基础组件
-- **Button** (按钮) - 各种样式的按钮组件
-- **Cell** (单元格) - 列表项单元格组件
-- **Icon** (图标) - WeUI风格图标组件
-
-### 导航组件
-- **Navbar** (导航栏) - 顶部导航栏
-- **Tabbar** (标签栏) - 底部标签栏
-
-### 反馈组件
-- **Toast** (提示) - 轻提示组件
-- **Dialog** (对话框) - 模态对话框
-- **Progress** (进度条) - 进度显示组件
-
-### 表单组件
-- **Picker** (选择器) - 选择器组件
-- **Actionsheet** (操作列表) - 上拉操作菜单
-
-### 展示组件
-- **List** (列表) - 列表容器
-- **Panel** (面板) - 面板容器
-- **Preview** (预览) - 文件预览组件
-
-### 其他组件
-- **Steps** (步骤条) - 步骤指示器
-- **LoadMore** (加载更多) - 加载更多组件
-
-## 📖 使用示例
-
-### 按钮组件
 ```typescript
-import { Component } from '@angular/core';
-import { ButtonComponent } from 'angular-weui-components';
+import { NgModule } from '@angular/core';
+import { WeUIModule } from 'angular-weui-components';
 
-@Component({
-  selector: 'app-example',
-  template: `
-    <weui-button type="primary">主要按钮</weui-button>
-    <weui-button type="default">默认按钮</weui-button>
-    <weui-button type="warn">警告按钮</weui-button>
-  `
+@NgModule({
+  imports: [
+    WeUIModule.forRoot()
+  ]
 })
-export class ExampleComponent {}
+export class AppModule { }
 ```
 
-### 提示组件
+## 组件列表
+
+### 表单组件
+
+| 组件 | 说明 | 按需引入路径 |
+|-----|------|------------|
+| Button | 按钮组件 | `angular-weui-components/button` |
+| Cell | 单元格组件 | `angular-weui-components/cell` |
+| Picker | 选择器组件 | `angular-weui-components/picker` |
+
+### 导航组件
+
+| 组件 | 说明 | 按需引入路径 |
+|-----|------|------------|
+| Navbar | 导航栏组件 | `angular-weui-components/navbar` |
+| Tabbar | 标签栏组件 | `angular-weui-components/tabbar` |
+
+### 反馈组件
+
+| 组件 | 说明 | 按需引入路径 |
+|-----|------|------------|
+| Toast | 轻提示组件 | `angular-weui-components/toast` |
+| Dialog | 对话框组件 | `angular-weui-components/dialog` |
+| Progress | 进度条组件 | `angular-weui-components/progress` |
+| Actionsheet | 操作菜单组件 | `angular-weui-components/actionsheet` |
+| Gallery | 图片查看器组件 | `angular-weui-components/gallery` |
+
+### 布局组件
+
+| 组件 | 说明 | 按需引入路径 |
+|-----|------|------------|
+| List | 列表容器组件 | `angular-weui-components/list` |
+| Panel | 面板容器组件 | `angular-weui-components/panel` |
+| Article | 文章组件 | `angular-weui-components/article` |
+| Flex | 弹性布局组件 | `angular-weui-components/flex` |
+| Grid | 网格布局组件 | `angular-weui-components/grid` |
+| Footer | 底部组件 | `angular-weui-components/footer` |
+
+### 展示组件
+
+| 组件 | 说明 | 按需引入路径 |
+|-----|------|------------|
+| Preview | 预览组件 | `angular-weui-components/preview` |
+| Icon | 图标组件 | `angular-weui-components/icon` |
+| Loadmore | 加载更多组件 | `angular-weui-components/loadmore` |
+| Steps | 步骤条组件 | `angular-weui-components/steps` |
+| Badge | 徽章组件 | `angular-weui-components/badge` |
+
+## 使用示例
+
+### Button 按钮组件
+
 ```typescript
 import { Component } from '@angular/core';
-import { ToastService } from 'angular-weui-components';
+import { WeUIButtonComponent } from 'angular-weui-components/button';
 
 @Component({
   selector: 'app-example',
   template: `
-    <button (click)="showToast()">显示提示</button>
-  `
+    <weui-button buttonType="primary" (click)="onClick()">主要按钮</weui-button>
+    <weui-button buttonType="default">默认按钮</weui-button>
+    <weui-button buttonType="warn">警告按钮</weui-button>
+    <weui-button [loading]="true">加载中</weui-button>
+    <weui-button [disabled]="true">禁用</weui-button>
+  `,
+  imports: [WeUIButtonComponent]
 })
 export class ExampleComponent {
-  constructor(private toast: ToastService) {}
-  
-  showToast() {
-    this.toast.show('操作成功！');
+  onClick() {
+    console.log('按钮点击');
   }
 }
 ```
 
-## 🔧 开发
+### Toast 轻提示组件
+
+```typescript
+import { Component } from '@angular/core';
+import { WeUIToastService } from 'angular-weui-components/toast';
+
+@Component({
+  selector: 'app-example',
+  template: `
+    <button (click)="showSuccess()">成功提示</button>
+    <button (click)="showLoading()">加载提示</button>
+  `
+})
+export class ExampleComponent {
+  constructor(private toast: WeUIToastService) {}
+
+  showSuccess() {
+    this.toast.success('操作成功！');
+  }
+
+  showLoading() {
+    this.toast.loading('加载中...');
+    // 模拟异步操作
+    setTimeout(() => {
+      this.toast.hide();
+    }, 2000);
+  }
+}
+```
+
+### Dialog 对话框组件
+
+```typescript
+import { Component } from '@angular/core';
+import { WeUIDialogComponent } from 'angular-weui-components/dialog';
+
+@Component({
+  selector: 'app-example',
+  template: `
+    <button (click)="showAlert()">显示警告对话框</button>
+    <button (click)="showConfirm()">显示确认对话框</button>
+    
+    <weui-dialog #dialog></weui-dialog>
+  `
+})
+export class ExampleComponent {
+  constructor(private dialog: WeUIDialogComponent) {}
+
+  showAlert() {
+    this.dialog.show({
+      title: '提示',
+      content: '这是一个警告对话框',
+      confirmText: '确定'
+    });
+  }
+
+  showConfirm() {
+    this.dialog.show({
+      title: '确认',
+      content: '确定要执行此操作吗？',
+      confirmText: '确定',
+      cancelText: '取消'
+    }).then(() => {
+      console.log('用户点击了确定');
+    }).catch(() => {
+      console.log('用户点击了取消');
+    });
+  }
+}
+```
+
+### Picker 选择器组件
+
+```typescript
+import { Component } from '@angular/core';
+import { WeUIPickerComponent, WeUIPickerColumn } from 'angular-weui-components/picker';
+
+@Component({
+  selector: 'app-example',
+  template: `
+    <button (click)="showPicker()">显示选择器</button>
+    
+    <weui-picker
+      #picker
+      [columns]="columns"
+      title="请选择"
+      (confirm)="onConfirm($event)"
+      (cancel)="onCancel()">
+    </weui-picker>
+  `
+})
+export class ExampleComponent {
+  columns: WeUIPickerColumn[][] = [
+    [
+      { label: '选项1', value: 1 },
+      { label: '选项2', value: 2 },
+      { label: '选项3', value: 3 }
+    ]
+  ];
+
+  constructor(private picker: WeUIPickerComponent) {}
+
+  showPicker() {
+    this.picker.show();
+  }
+
+  onConfirm(result: any) {
+    console.log('选择的值:', result.values);
+  }
+
+  onCancel() {
+    console.log('用户取消了选择');
+  }
+}
+```
+
+## API 文档
+
+### Button 组件
+
+#### Inputs
+
+| 属性 | 类型 | 默认值 | 说明 |
+|-----|------|-------|------|
+| buttonType | `'primary' \| 'default' \| 'warn'` | `'default'` | 按钮类型 |
+| size | `'small' \| 'normal' \| 'large'` | `'normal'` | 按钮大小 |
+| disabled | `boolean` | `false` | 是否禁用 |
+| loading | `boolean` | `false` | 是否显示加载状态 |
+| block | `boolean` | `false` | 是否块级显示 |
+| plain | `boolean` | `false` | 是否扁平样式 |
+| round | `boolean` | `false` | 是否圆角 |
+| circle | `boolean` | `false` | 是否圆形 |
+
+#### Outputs
+
+| 事件 | 说明 |
+|-----|------|
+| click | 点击事件 |
+
+### Toast 服务
+
+#### 方法
+
+| 方法 | 说明 |
+|-----|------|
+| show(options) | 显示提示 |
+| success(message) | 显示成功提示 |
+| warning(message) | 显示警告提示 |
+| error(message) | 显示错误提示 |
+| info(message) | 显示信息提示 |
+| loading(message) | 显示加载提示 |
+| hide() | 隐藏提示 |
+
+## 注意事项
+
+1. **Tree-shaking 支持**: 推荐使用按需引入，可以显著减小打包体积
+2. **OnPush 变更检测**: 所有组件都支持 OnPush 变更检测模式
+3. **移动端优先**: 组件针对移动端进行了优化，支持触摸交互
+4. **微信浏览器兼容**: 组件样式与微信内置浏览器保持一致
+5. **TypeScript 支持**: 所有组件都提供完整的类型定义
+
+## 开发
 
 ```bash
 # 克隆仓库
@@ -129,60 +335,41 @@ npm install
 # 启动开发服务器
 npm start
 
-# 构建
-npm run build
-
 # 运行测试
 npm test
 
-# 启动 Storybook
-npm run storybook
+# 构建库
+npm run build:lib
+
+# 发布到 npm
+npm run publish:npm
 ```
 
-## 📄 文档
-
-- **在线文档**: https://dlldsys.github.io/angular-weui/
-- **Storybook**: 查看组件示例和交互演示
-- **API文档**: 详细的组件API说明
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-1. Fork 本仓库
-2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交你的修改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 Pull Request
-
-## 📦 npm 包信息
-
-- **包名**: `angular-weui-components`
-- **版本**: `0.1.0-alpha.2`
-- **标签**: `alpha`
-- **安装**: `npm install angular-weui-components@alpha`
-- **npm页面**: https://www.npmjs.com/package/angular-weui-components
-
-## 📄 许可证
+## 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
 
-## 📋 更新日志
+## 更新日志
 
-### v0.1.0-alpha.2 (2026-03-23)
-- 📝 更新README文档，添加详细的使用说明
-- 📦 完善npm包信息和安装指南
-- 🔧 添加组件使用示例代码
-- 📚 改进文档结构和分类
+### v0.1.0-alpha.2 (2026-03-24)
+
+- 包质量与规范优化
+  - 完善 peerDependencies，支持 Angular 15-21
+  - 添加 module、types、exports 入口，支持 tree-shaking
+  - 设置 sideEffects: false 提升摇树优化
+  - 补充完整的类型定义文件
+- 组件优化
+  - 统一组件命名规范
+  - 优化组件支持 OnPush 变更检测
+  - 修复潜在内存泄漏问题
+- 文档完善
+  - 提供多种导入方式说明
+  - 添加详细的使用示例
+  - 补充完整的 API 文档
 
 ### v0.1.0-alpha.1 (2026-03-23)
-- 🎉 初始版本发布
-- ✨ 实现基础组件库架构
-- 📚 添加 Storybook 文档
-- 🚀 支持 GitHub Pages 部署
-- 📦 发布到 npm (alpha 标签)
-- ⚠️ 添加开发状态警告
 
----
-
-**⚠️ 重要提醒**: 这是一个 alpha 预览版本，API 可能会发生变化。请关注更新日志获取最新信息。
+- 初始版本发布
+- 实现基础组件库架构
+- 添加 Storybook 文档
+- 支持 GitHub Pages 部署

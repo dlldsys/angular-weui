@@ -9,7 +9,7 @@
   <!-- 组件导航 -->
   <div class="component-nav">
     <button 
-      *ngFor="let item of tabbarItems; let i = index"
+      *ngFor="let item of tabbarItems; let i = index; trackBy: trackByTabbarItem"
       class="nav-item"
       [class.active]="activeTabIndex === i"
       (click)="activeTabIndex = i; currentSection = item.id">
@@ -221,9 +221,13 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
     <!-- 操作表 -->
     <div class="demo-block">
       <h3 class="block-title">ActionSheet 操作列表</h3>
-      <p class="block-desc">从底部弹出的操作菜单</p>
+      <p class="block-desc">从底部弹出的操作菜单，支持图标和警告类型</p>
       
-      <weui-button buttonType="primary" (click)="openActionSheet()">打开操作表</weui-button>
+      <div class="demo-row">
+        <weui-button buttonType="primary" (click)="openActionSheet()">基础操作表</weui-button>
+        <weui-button buttonType="primary" (click)="actionSheetVisible = true; actions = fullActionsheetActions">完整操作表</weui-button>
+        <weui-button buttonType="primary" (click)="actionSheetVisible = true; actions = menuActions">菜单操作</weui-button>
+      </div>
     </div>
 
     <!-- 输入框 -->
@@ -283,11 +287,11 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
       </div>
       
       <div class="progress-demo">
-        <weui-progress [value]="50" status="warning" [showText]="true"></weui-progress>
+        <weui-progress [value]="50" status="active" [showText]="true"></weui-progress>
       </div>
       
       <div class="progress-demo">
-        <weui-progress [value]="25" status="error" [showText]="true"></weui-progress>
+        <weui-progress [value]="25" status="wrong" [showText]="true"></weui-progress>
       </div>
     </div>
 
@@ -324,7 +328,7 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
       
       <p>3列网格 (Emoji图标):</p>
       <weui-grid>
-        <weui-grid-item *ngFor="let item of [1,2,3,4,5,6,7,8,9]" 
+        <weui-grid-item *ngFor="let item of [1,2,3,4,5,6,7,8,9]; trackBy: trackByIndex" 
                        [icon]="['📱', '💬', '📷', '🎵', '📹', '📍', '💳', '📤', '📥'][item - 1]" 
                        [label]="['微信', '通讯录', '朋友圈', '小程序', '游戏', '收藏', '卡包', '表情', '设置'][item - 1]">
         </weui-grid-item>
@@ -345,7 +349,7 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
       <p class="block-desc">带缩略图的列表组件</p>
       
       <weui-list [access]="true">
-        <div class="list-item" *ngFor="let item of listData">
+        <div class="list-item" *ngFor="let item of listData; trackBy: trackByListItem">
           <span class="list-label">{{ item.label }}</span>
           <span class="list-value">{{ item.value }}</span>
           <i *ngIf="item.arrow" class="weui-icon-arrow list-arrow"></i>
@@ -380,7 +384,7 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
       
       <weui-panel title="图文组合列表" more="查看更多">
         <div class="panel-media">
-          <div class="media-item" *ngFor="let item of [1,2,3]">
+          <div class="media-item" *ngFor="let item of [1,2,3]; trackBy: trackByIndex">
             <img [src]="'https://via.placeholder.com/100x100/07c160/ffffff?text=' + item" alt="" />
           </div>
         </div>
@@ -483,7 +487,7 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
       </div>
       
       <div class="demo-row">
-        <weui-badge value="热" status="warning"></weui-badge>
+        <weui-badge value="警告" status="warning"></weui-badge>
         <weui-badge value="NEW" status="primary"></weui-badge>
         <weui-badge value="成功" status="success"></weui-badge>
         <weui-badge value="错误" status="error"></weui-badge>
@@ -530,7 +534,7 @@ export class AppModule {{ '{' }} {{ '}' }}</code></pre>
       
       <div class="gallery-grid">
         <div 
-          *ngFor="let img of galleryImages; let i = index"
+          *ngFor="let img of galleryImages; let i = index; trackBy: trackByGalleryImage"
           class="gallery-item"
           (click)="openGallery(i)">
           <img [src]="img.src" [alt]="img.alt" />

@@ -1,7 +1,7 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-export type IconType = 
+export type WeUIIconType = 
   | 'success' 
   | 'warning' 
   | 'error' 
@@ -36,10 +36,11 @@ export type IconType =
   standalone: true,
   imports: [CommonModule],
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.scss']
+  styleUrls: ['./icon.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WeUIIconComponent implements OnChanges {
-  @Input() type?: IconType;
+  @Input() type?: WeUIIconType;
   @Input() name?: string;
   @Input() size: 'small' | 'normal' | 'large' = 'normal';
   @Input() color?: string;
@@ -48,7 +49,33 @@ export class WeUIIconComponent implements OnChanges {
   iconClass: string[] = [];
   svgPath?: string;
 
-  private iconPaths: Record<IconType, string> = {
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.updateIcon();
+    this.cdr.markForCheck();
+  }
+
+  private updateIcon(): void {
+    this.iconClass = ['weui-icon'];
+    
+    // 添加尺寸类
+    this.iconClass.push(`weui-icon--${this.size}`);
+    
+    // 添加旋转动画
+    if (this.spin) {
+      this.iconClass.push('weui-icon--spin');
+    }
+
+    // 获取SVG路径
+    const iconType = this.type || this.name as WeUIIconType;
+    if (iconType && this.iconPaths[iconType]) {
+      this.svgPath = this.iconPaths[iconType];
+      this.iconClass.push(`weui-icon--${iconType}`);
+    }
+  }
+
+  private iconPaths: Record<WeUIIconType, string> = {
     'success': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
     'warning': 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
     'error': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
@@ -78,27 +105,4 @@ export class WeUIIconComponent implements OnChanges {
     'lock': 'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
     'unlock': 'M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-5V6c0-1.66-1.34-3-3-3S7 4.34 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z'
   };
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.updateIcon();
-  }
-
-  private updateIcon(): void {
-    this.iconClass = ['weui-icon'];
-    
-    // 添加尺寸类
-    this.iconClass.push(`weui-icon--${this.size}`);
-    
-    // 添加旋转动画
-    if (this.spin) {
-      this.iconClass.push('weui-icon--spin');
-    }
-
-    // 获取SVG路径
-    const iconType = this.type || this.name as IconType;
-    if (iconType && this.iconPaths[iconType]) {
-      this.svgPath = this.iconPaths[iconType];
-      this.iconClass.push(`weui-icon--${iconType}`);
-    }
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -8,7 +8,7 @@ import { WeUICellComponent } from '../../projects/components/cell/src/cell.compo
 import { WeUIDialogComponent } from '../../projects/components/dialog/src/dialog.component';
 import { WeUIToastComponent } from '../../projects/components/toast/src/toast.component';
 import { WeUIToastService } from '../../projects/components/toast/src/toast.service';
-import { WeUIActionSheetComponent, WeUIActionSheetItem } from '../../projects/components/actionsheet/src/actionsheet.component';
+import { WeUIActionsheetComponent, WeUIActionsheetItem } from '../../projects/components/actionsheet/src/actionsheet.component';
 import { WeUIInputComponent } from '../../projects/components/form/src/input.component';
 import { WeUINavbarComponent } from '../../projects/components/navbar/src/navbar.component';
 import { WeUITabbarComponent, WeUITabbarItem } from '../../projects/components/tabbar/src/tabbar.component';
@@ -24,6 +24,7 @@ import { WeUILoadmoreComponent } from '../../projects/components/loadmore/src/lo
 import { WeUIPanelComponent } from '../../projects/components/panel/src/panel.component';
 import { WeUIPreviewComponent, WeUIPreviewItemComponent } from '../../projects/components/preview/src/preview.component';
 import { WeUIGalleryComponent } from '../../projects/components/gallery/src/gallery.component';
+import { WeUICloseComponent } from '../../projects/components/gallery/src/gallery-close.component';
 import { WeUIFooterComponent } from '../../projects/components/footer/src/footer.component';
 import { WeUIStepsComponent, WeUIStepComponent } from '../../projects/components/steps/src/steps.component';
 import { WeUIBadgeComponent } from '../../projects/components/badge/src/badge.component';
@@ -39,7 +40,7 @@ import { WeUIPickerComponent, WeUIPickerColumn } from '../../projects/components
     WeUICellComponent,
     WeUIDialogComponent,
     WeUIToastComponent,
-    WeUIActionSheetComponent,
+    WeUIActionsheetComponent,
     WeUIInputComponent,
     WeUINavbarComponent,
     WeUITabbarComponent,
@@ -94,8 +95,27 @@ export class DemoComponent implements OnInit, OnDestroy {
 
   // ActionSheet 状态
   actionSheetVisible = false;
-  actions: WeUIActionSheetItem[] = [];
-  actionsheetItems: WeUIActionSheetItem[] = [];
+  actions: WeUIActionsheetItem[] = [];
+  actionsheetItems: WeUIActionsheetItem[] = [];
+
+  // 完整的Actionsheet演示菜单
+  fullActionsheetActions: WeUIActionsheetItem[] = [
+    { name: '拍照', type: 'default', icon: 'weui-icon-camera' },
+    { name: '从相册选择', type: 'default', icon: 'weui-icon-photo' },
+    { name: '微信', type: 'default', icon: 'weui-icon-circle' },
+    { name: '编辑', type: 'default', icon: 'weui-icon-edit' },
+    { name: '删除', type: 'warn', icon: 'weui-icon-delete' },
+    { name: '分享', type: 'default', icon: 'weui-icon-share' }
+  ];
+
+  // 操作菜单
+  menuActions: WeUIActionsheetItem[] = [
+    { name: '收藏', type: 'default', icon: 'weui-icon-star' },
+    { name: '发送给朋友', type: 'default', icon: 'weui-icon-share' },
+    { name: '收藏', type: 'default', icon: 'weui-icon-star' },
+    { name: '编辑', type: 'default', icon: 'weui-icon-edit' },
+    { name: '删除', type: 'warn', icon: 'weui-icon-delete' }
+  ];
 
   // 导航栏和标签栏
   activeTabIndex = 0;
@@ -519,7 +539,7 @@ export class DemoComponent implements OnInit, OnDestroy {
     this.actionSheetVisible = true;
   }
 
-  handleActionSelect(item: WeUIActionSheetItem, index: number): void {
+  handleActionSelect(item: WeUIActionsheetItem, index: number): void {
     this.actionSheetVisible = false;
     this.showToast('success', `选择了: ${item.name}`);
   }
@@ -747,5 +767,25 @@ export class DemoComponent implements OnInit, OnDestroy {
   showSection(section: string): void {
     this.currentSection = section;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ==================== TrackBy 函数优化 ====================
+  // 使用 trackBy 可以让 Angular 识别数组中的每个元素，
+  // 在数据更新时只渲染变化的元素，避免不必要的 DOM 操作
+
+  trackByTabbarItem(index: number, item: WeUITabbarItem): string {
+    return item.id;
+  }
+
+  trackByListItem(index: number, item: { id: number }): number {
+    return item.id;
+  }
+
+  trackByGalleryImage(index: number, item: { src: string }): string {
+    return item.src;
+  }
+
+  trackByIndex(index: number): number {
+    return index;
   }
 }

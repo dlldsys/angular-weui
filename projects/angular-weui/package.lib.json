@@ -2,6 +2,13 @@
   "name": "angular-weui-components",
   "version": "0.1.0-alpha.2",
   "description": "Angular WeUI component library - WeChat UI components for Angular applications",
+  "main": "bundles/angular-weui-components.umd.js",
+  "module": "esm2022/angular-weui-components.mjs",
+  "types": "angular-weui-components.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "ng build angular-weui --configuration production"
+  },
   "keywords": [
     "angular",
     "weui",
@@ -21,20 +28,14 @@
     "url": "https://github.com/dlldsys/angular-weui/issues"
   },
   "homepage": "https://dlldsys.github.io/angular-weui/",
-  "sideEffects": false,
-  "main": "./bundles/angular-weui-components.umd.js",
-  "module": "./esm2022/angular-weui-components.mjs",
-  "es2020": "./esm2022/angular-weui-components.mjs",
-  "esm2022": "./esm2022/angular-weui-components.mjs",
-  "fesm2022": "./fesm2022/angular-weui-components.mjs",
-  "types": "./angular-weui-components.d.ts",
+  "peerDependencies": {
+    "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0",
+    "@angular/core": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0"
+  },
   "exports": {
     ".": {
       "types": "./angular-weui-components.d.ts",
       "esm2022": "./esm2022/angular-weui-components.mjs",
-      "esm": "./esm2022/angular-weui-components.mjs",
-      "module": "./esm2022/angular-weui-components.mjs",
-      "fesm2022": "./fesm2022/angular-weui-components.mjs",
       "default": "./bundles/angular-weui-components.umd.js"
     },
     "./button": {
@@ -112,29 +113,35 @@
       "esm2022": "./steps/angular-weui-steps.mjs",
       "default": "./steps/angular-weui-steps.umd.js"
     },
-    "./theme": {
-      "types": "./theme/theme.d.ts",
-      "esm2022": "./theme/angular-weui-theme.mjs",
-      "default": "./theme/angular-weui-theme.umd.js"
-    }
-  },
-  "peerDependencies": {
-    "@angular/core": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0",
-    "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0",
-    "rxjs": "^7.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@angular/core": {
-      "optional": true
+    "./article": {
+      "types": "./article/article.d.ts",
+      "esm2022": "./article/angular-weui-article.mjs",
+      "default": "./article/angular-weui-article.umd.js"
     },
-    "@angular/common": {
-      "optional": true
+    "./gallery": {
+      "types": "./gallery/gallery.d.ts",
+      "esm2022": "./gallery/angular-weui-gallery.mjs",
+      "default": "./gallery/angular-weui-gallery.umd.js"
     },
-    "rxjs": {
-      "optional": true
+    "./badge": {
+      "types": "./badge/badge.d.ts",
+      "esm2022": "./badge/angular-weui-badge.mjs",
+      "default": "./badge/angular-weui-badge.umd.js"
+    },
+    "./flex": {
+      "types": "./flex/flex.d.ts",
+      "esm2022": "./flex/angular-weui-flex.mjs",
+      "default": "./flex/angular-weui-flex.umd.js"
+    },
+    "./grid": {
+      "types": "./grid/grid.d.ts",
+      "esm2022": "./grid/angular-weui-grid.mjs",
+      "default": "./grid/angular-weui-grid.umd.js"
+    },
+    "./footer": {
+      "types": "./footer/footer.d.ts",
+      "esm2022": "./footer/angular-weui-footer.mjs",
+      "default": "./footer/angular-weui-footer.umd.js"
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

@@ -1,5 +1,7 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+export type WeUIProgressStatus = 'normal' | 'active' | 'wrong' | 'success';
 
 @Component({
   selector: 'weui-progress',
@@ -7,7 +9,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WeUIProgressComponent implements OnChanges, OnInit {
   @Input() value: number = 0;
@@ -15,11 +18,13 @@ export class WeUIProgressComponent implements OnChanges, OnInit {
   @Input() size: 'small' | 'normal' | 'large' = 'normal';
   @Input() color?: string;
   @Input() showText: boolean = true;
-  @Input() status: 'normal' | 'success' | 'warning' | 'error' = 'normal';
+  @Input() status: WeUIProgressStatus = 'normal';
   @Input() indeterminate: boolean = false;
 
   percentage: number = 0;
   progressClass: string[] = [];
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.updateProgress();
@@ -27,6 +32,7 @@ export class WeUIProgressComponent implements OnChanges, OnInit {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.updateProgress();
+    this.cdr.markForCheck();
   }
 
   private updateProgress(): void {
@@ -56,7 +62,7 @@ export class WeUIProgressComponent implements OnChanges, OnInit {
       return '✓';
     }
     
-    if (this.status === 'error') {
+    if (this.status === 'wrong') {
       return '✕';
     }
     
