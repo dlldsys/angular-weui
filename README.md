@@ -322,6 +322,12 @@ export class ExampleComponent {
 4. **微信浏览器兼容**: 组件样式与微信内置浏览器保持一致
 5. **TypeScript 支持**: 所有组件都提供完整的类型定义
 
+## 📄 文档
+
+- **🚀 在线演示**: https://dlldsys.github.io/angular-weui/
+- **📖 Storybook**: 查看组件示例和交互演示
+- **📚 API文档**: 详细的组件API说明
+
 ## 开发
 
 ```bash
@@ -347,21 +353,17 @@ npm run publish:npm
 
 ## 许可证
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-## 更新日志
+### v0.1.0-alpha.3 (2026-03-27)
+- 🚀 添加GitHub Pages在线演示地址
+- 📝 完善README文档和npm包信息
+- 🔧 修复组件编译错误和类型问题
+- 📦 更新版本并同步发布
 
 ### v0.1.0-alpha.2 (2026-03-24)
 
-- 包质量与规范优化
-  - 完善 peerDependencies，支持 Angular 15-21
-  - 添加 module、types、exports 入口，支持 tree-shaking
-  - 设置 sideEffects: false 提升摇树优化
-  - 补充完整的类型定义文件
-- 组件优化
-  - 统一组件命名规范
-  - 优化组件支持 OnPush 变更检测
-  - 修复潜在内存泄漏问题
+- 统一组件命名规范
+- 优化组件支持 OnPush 变更检测
+- 修复潜在内存泄漏问题
 - 文档完善
   - 提供多种导入方式说明
   - 添加详细的使用示例
