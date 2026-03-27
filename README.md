@@ -1,17 +1,24 @@
 # Angular WeUI Components
 
+[![npm version](https://badge.fury.io/js/angular-weui-components.svg)](https://badge.fury.io/js/angular-weui-components)
+[![npm downloads](https://img.shields.io/npm/dm/angular-weui-components.svg)](https://www.npmjs.com/package/angular-weui-components)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Angular WeUI Components 是基于微信官方 WeUI 设计语言开发的 Angular 组件库，为移动端 Web 应用提供一致的微信风格用户体验。
+
+🚀 **在线演示**: https://dlldsys.github.io/angular-weui/
 
 ## 特性
 
-- 基于 WeUI 设计规范 - 完美还原微信视觉风格
-- 移动端优化 - 专为移动设备设计的交互体验
-- Angular 15-21 支持 - 使用最新 Angular 技术
-- TypeScript 支持 - 完整的类型定义
-- 组件化开发 - 模块化设计，支持按需引入
-- Tree-shaking 优化 - 自动移除未使用的代码
-- OnPush 变更检测 - 高性能组件渲染
-- 完整的单元测试 - 确保组件稳定性
+- 🎨 **基于 WeUI 设计规范** - 完美还原微信视觉风格
+- 📱 **移动端优化** - 专为移动设备设计的交互体验
+- 🅰️ **Angular 15-21 支持** - 使用最新 Angular 技术
+- 📦 **TypeScript 支持** - 完整的类型定义
+- 🎯 **组件化开发** - 模块化设计，支持按需引入
+- 🌳 **Tree-shaking 优化** - 自动移除未使用的代码
+- ⚡ **OnPush 变更检测** - 高性能组件渲染
+- ✅ **完整的单元测试** - 确保组件稳定性
+- 🚀 **在线演示** - https://dlldsys.github.io/angular-weui/
 
 ## 支持的 Angular 版本
 
