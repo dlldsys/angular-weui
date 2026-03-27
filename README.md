@@ -360,6 +360,14 @@ npm run publish:npm
 
 ## 许可证
 
+## 更新日志
+
+### v0.1.0-alpha.4 (2026-03-27)
+- 🚀 添加GitHub Pages在线演示地址到README显眼位置
+- 📝 完善README文档，添加npm徽章和许可证徽章
+- 🔧 修复组件编译错误和类型问题
+- 📦 更新版本并同步发布
+
 ### v0.1.0-alpha.3 (2026-03-27)
 - 🚀 添加GitHub Pages在线演示地址
 - 📝 完善README文档和npm包信息
